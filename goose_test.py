@@ -36,6 +36,7 @@ forage_data['dayordinal']=forage_data['day']+simulation_start_date_ordinal
 my_dateparser=(lambda x: pd.to_datetime(x,unit='D', origin=simulation_start_date))
 # The field 'daydate includes the date of the day for the data'
 forage_data['daydate']=my_dateparser(forage_data['day'])
+forage_data['habitat'] = 'Unknown'
 # A dictionary that will allow to map vegetation to habitat
 # The value is a list of tuples of last_sown_veg, veg_phase, veg_type_chr, previous_crop
 # Empty string means don't care
@@ -72,14 +73,18 @@ veg_to_habitat = {
     ('OCloverGrassGrazed1', 2, '*', '*'), 
     ('OCloverGrassGrazed1', 3, '*', '*'), 
     ('CloverGrassGrazed1', 0, '*', '*'), 
-    ('CloverGrassGrazed2', 0, '*', '*')]
+    ('CloverGrassGrazed2', 0, '*', '*')],
+    'Rape': [('WinterRape', 0, '*', '*'),
+             ('WinterRape', 2, '*', '*'),
+             ('WinterRape', 3, '*', '*')]
     }
+
 # let us combine the fields for testing
 forage_data_idxx = [forage_data.mask(veg_to_habitat_filt_keys[0],t[0])
                     .mask(veg_to_habitat_filt_keys[1],t[1]).mask(veg_to_habitat_filt_keys[2],t[2])
                     .mask(veg_to_habitat_filt_keys[3],t[3]).index.values for t in veg_to_habitat['Grass']]
 idxs = np.concatenate(forage_data_idxx).ravel().tolist()
-forage_data['habitat'] = 'Unknown'
+
 forage_data.iloc[idxs, forage_data.columns.get_loc("habitat")] = 'Grass'
 #rel_fields_ser = pd.Series(list(zip(forage_data['last_sown_veg'], 
 #                                    forage_data['veg_phase'], forage_data['veg_type_chr'], forage_data['previous_crop'])))
