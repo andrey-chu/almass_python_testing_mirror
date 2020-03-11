@@ -18,7 +18,7 @@ def ac_mask(df, key, value):
       if  value == '*':
           return df
       else:
-          return df[df[key] == value]
+          return df[df[key] == value] # Use multiple values and isin to make it readable
 # We will use this mask instead of a standard one
 pd.DataFrame.mask = ac_mask
 
