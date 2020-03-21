@@ -448,21 +448,31 @@ regexp = re.compile(".*[gG]rass.*") # everything that contains grass
 grass_types = list(filter(regexp.match, veg_types))
 # let us filter grasses
 forage_data_grass = forage_data[forage_data['veg_type_chr'].isin(grass_types)]
-grass_1=forage_data_grass.groupby(['veg_type_chr', 'daydate']).agg({'veg_height': [np.mean,np.std]}, as_Index=False)
+grass_1=forage_data_grass.groupby(['veg_type_chr', 'daydate']).agg(veg_mean=('veg_height', np.mean), veg_std=('veg_height',np.std))
+grass_1['veg_up']=grass_1['veg_mean']+grass_1['veg_std']
+grass_1['veg_down']=grass_1['veg_mean']-grass_1['veg_std']
+
 fig5, ax5 = plt.subplots()
 
 months = mdates.MonthLocator()
 myFmt = mdates.DateFormatter('%b')
 # plt.sca()
 fig5.autofmt_xdate(rotation='vertical')
-    ax4[j].xaxis.set_major_formatter(myFmt)
-    
-    ax4[j].grid()
-    
-    
-    ax4[j].xaxis.set_minor_locator(months)
-    ax4[j].xaxis_date()
+ax5.xaxis.set_major_formatter(myFmt)
+
+ax5.grid()
+p1=[None]*len(grass_types)
+
+ax5.xaxis.set_minor_locator(months)
+ax5.xaxis_date()
 p=[None]*len(grass_types)
+ax5.plot(grass_1.loc[(grass_types[1],)].index,barnacle_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
+ax5.plot(grass_1.loc[(grass_types[1],)].index,pinkfoot_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
+ax5.plot(grass_1.loc[(grass_types[1],)].index,greylag_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
 for i in range(len(grass_types)):
-    p[i],=ax1.plot(, )
     
+    p[i],=ax5.plot(grass_1.loc[(grass_types[i],)].index, grass_1.loc[(grass_types[i],)]['veg_mean'])
+    p1[i]=ax5.fill_between(grass_1.loc[(grass_types[i],)].index, grass_1.loc[(grass_types[i],)]['veg_up'], grass_1.loc[(grass_types[i],)]['veg_down'],alpha=0.2,color=p[i]._color)
+    #
+fig5.suptitle('Grasses')
+ax5.legend(handles=p, labels=grass_types, fancybox=True, shadow=True, title='Vegetation types', loc='center right',bbox_to_anchor=(1.5, 0.60))
