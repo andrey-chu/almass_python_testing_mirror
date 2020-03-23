@@ -446,11 +446,20 @@ greylag_max = 24.3769
 veg_types = forage_data['veg_type_chr'].unique()
 regexp = re.compile(".*[gG]rass.*") # everything that contains grass
 grass_types = list(filter(regexp.match, veg_types))
-# let us filter grasses
+# let us filter grasses: All grasses
 forage_data_grass = forage_data[forage_data['veg_type_chr'].isin(grass_types)]
 grass_1=forage_data_grass.groupby(['veg_type_chr', 'daydate']).agg(veg_mean=('veg_height', np.mean), veg_std=('veg_height',np.std))
 grass_1['veg_up']=grass_1['veg_mean']+grass_1['veg_std']
 grass_1['veg_down']=grass_1['veg_mean']-grass_1['veg_std']
+# let us filter grasses: those that geese are foraging upon
+veg_types1 = forage_data_months_filtered['veg_type_chr'].unique()
+
+grass_types_foraged = list(filter(regexp.match, veg_types1))
+forage_data_grass2 = forage_data_months_filtered[forage_data_months_filtered['veg_type_chr'].isin(grass_types_foraged)]
+grass_2=forage_data_grass2.groupby(['veg_type_chr', 'daydate']).agg(veg_mean=('veg_height', np.mean), veg_std=('veg_height',np.std))
+grass_2['veg_up']=grass_2['veg_mean']+grass_2['veg_std']
+grass_2['veg_down']=grass_2['veg_mean']-grass_2['veg_std']
+
 
 fig5, ax5 = plt.subplots()
 
@@ -469,6 +478,9 @@ p=[None]*len(grass_types)
 ax5.plot(grass_1.loc[(grass_types[1],)].index,barnacle_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
 ax5.plot(grass_1.loc[(grass_types[1],)].index,pinkfoot_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
 ax5.plot(grass_1.loc[(grass_types[1],)].index,greylag_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
+ax5.annotate('Barnacle', (mdates.date2num(dt.datetime(2011, 3, 1)), barnacle_max), xytext=(-15, -15), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+ax5.annotate('Pinkfoot', (mdates.date2num(dt.datetime(2011, 3, 1)), pinkfoot_max), xytext=(12, 12), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+ax5.annotate('Greylag', (mdates.date2num(dt.datetime(2011, 3, 1)), greylag_max), xytext=(15, 15), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
 for i in range(len(grass_types)):
     
     p[i],=ax5.plot(grass_1.loc[(grass_types[i],)].index, grass_1.loc[(grass_types[i],)]['veg_mean'])
@@ -486,18 +498,122 @@ fig6.autofmt_xdate(rotation='vertical')
 ax6.xaxis.set_major_formatter(myFmt)
 
 ax6.grid()
-p1=[None]*len(grass_types)
+p1=[None]*len(grass_types_foraged)
 
 ax6.xaxis.set_minor_locator(months)
 ax6.xaxis_date()
-p=[None]*len(grass_types)
-ax6.plot(grass_1.loc[(grass_types[1],)].index,barnacle_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
-ax6.plot(grass_1.loc[(grass_types[1],)].index,pinkfoot_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
-ax6.plot(grass_1.loc[(grass_types[1],)].index,greylag_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
-for i in range(len(grass_types)):
+p_foraged=[None]*len(grass_types_foraged)
+p1_foraged=[None]*len(grass_types_foraged)
+ax6.plot(grass_2.loc[(grass_types_foraged[1],)].index,barnacle_max*np.ones(len(grass_2.loc[(grass_types_foraged[1],)].index)), color='black')
+ax6.plot(grass_2.loc[(grass_types_foraged[1],)].index,pinkfoot_max*np.ones(len(grass_2.loc[(grass_types_foraged[1],)].index)), color='black')
+ax6.plot(grass_2.loc[(grass_types_foraged[1],)].index,greylag_max*np.ones(len(grass_2.loc[(grass_types_foraged[1],)].index)), color='black')
+ax6.annotate('Barnacle', (mdates.date2num(dt.datetime(2011, 3, 1)), barnacle_max), xytext=(-15, -15), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+ax6.annotate('Pinkfoot', (mdates.date2num(dt.datetime(2011, 3, 1)), pinkfoot_max), xytext=(12, 12), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+ax6.annotate('Greylag', (mdates.date2num(dt.datetime(2011, 3, 1)), greylag_max), xytext=(15, 15), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+for i in range(len(grass_types_foraged)):
     
-    p[i],=ax6.plot(grass_1.loc[(grass_types[i],)].index, grass_1.loc[(grass_types[i],)]['veg_mean'])
-    p1[i]=ax6.fill_between(grass_1.loc[(grass_types[i],)].index, grass_1.loc[(grass_types[i],)]['veg_up'], grass_1.loc[(grass_types[i],)]['veg_down'],alpha=0.2,color=p[i]._color)
+    p_foraged[i],=ax6.plot(grass_2.loc[(grass_types_foraged[i],)].index, grass_2.loc[(grass_types_foraged[i],)]['veg_mean'])
+    p1_foraged[i]=ax6.fill_between(grass_2.loc[(grass_types_foraged[i],)].index, grass_2.loc[(grass_types_foraged[i],)]['veg_up'], grass_2.loc[(grass_types_foraged[i],)]['veg_down'],alpha=0.2,color=p[i]._color)
     #
 fig6.suptitle('Grasses (foraged)')
-ax6.legend(handles=p, labels=grass_types, fancybox=True, shadow=True, title='Vegetation types', loc='center right',bbox_to_anchor=(1.5, 0.60))
+ax6.legend(handles=p_foraged, labels=grass_types_foraged, fancybox=True, shadow=True, title='Vegetation types', loc='center right',bbox_to_anchor=(1.5, 0.60))
+
+
+
+regexp = re.compile("^((?![gG]rass).)*$") # everything that does not contain grass
+nongrass_types = list(filter(regexp.match, veg_types))
+# let us filter grasses: All non-grasses
+forage_data_nongrass = forage_data[forage_data['veg_type_chr'].isin(nongrass_types)]
+nongrass_1=forage_data_nongrass.groupby(['veg_type_chr', 'daydate']).agg(veg_mean=('veg_height', np.mean), veg_std=('veg_height',np.std))
+nongrass_1['veg_up']=nongrass_1['veg_mean']+nongrass_1['veg_std']
+nongrass_1['veg_down']=nongrass_1['veg_mean']-nongrass_1['veg_std']
+# let us filter non-grasses: those that geese are foraging upon
+
+
+nongrass_types_foraged = list(filter(regexp.match, veg_types1))
+forage_data_nongrass2 = forage_data_months_filtered[forage_data_months_filtered['veg_type_chr'].isin(nongrass_types_foraged)]
+nongrass_2=forage_data_nongrass2.groupby(['veg_type_chr', 'daydate']).agg(veg_mean=('veg_height', np.mean), veg_std=('veg_height',np.std))
+nongrass_2['veg_up']=nongrass_2['veg_mean']+nongrass_2['veg_std']
+nongrass_2['veg_down']=nongrass_2['veg_mean']-nongrass_2['veg_std']
+
+
+fig7, ax7 = plt.subplots()
+
+months = mdates.MonthLocator()
+myFmt = mdates.DateFormatter('%b')
+# plt.sca()
+fig7.autofmt_xdate(rotation='vertical')
+ax7.xaxis.set_major_formatter(myFmt)
+ax7.set_ylim(-10,50)
+ax7.grid()
+p1=[None]*len(nongrass_types)
+
+ax7.xaxis.set_minor_locator(months)
+ax7.xaxis_date()
+p=[None]*len(nongrass_types)
+ax7.plot(nongrass_1.loc[(nongrass_types[1],)].index,barnacle_max*np.ones(len(nongrass_1.loc[(nongrass_types[1],)].index)), color='black')
+ax7.plot(nongrass_1.loc[(nongrass_types[1],)].index,pinkfoot_max*np.ones(len(nongrass_1.loc[(nongrass_types[1],)].index)), color='black')
+ax7.plot(nongrass_1.loc[(nongrass_types[1],)].index,greylag_max*np.ones(len(nongrass_1.loc[(nongrass_types[1],)].index)), color='black')
+ax7.annotate('Barnacle', (mdates.date2num(dt.datetime(2011, 3, 1)), barnacle_max), xytext=(-15, -15), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+ax7.annotate('Pinkfoot', (mdates.date2num(dt.datetime(2011, 3, 1)), pinkfoot_max), xytext=(12, 12), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+ax7.annotate('Greylag', (mdates.date2num(dt.datetime(2011, 3, 1)), greylag_max), xytext=(15, 15), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+for i in range(len(nongrass_types)):
+    
+    p[i],=ax7.plot(nongrass_1.loc[(nongrass_types[i],)].index, nongrass_1.loc[(nongrass_types[i],)]['veg_mean'])
+    p1[i]=ax7.fill_between(nongrass_1.loc[(nongrass_types[i],)].index, nongrass_1.loc[(nongrass_types[i],)]['veg_up'], nongrass_1.loc[(nongrass_types[i],)]['veg_down'],alpha=0.2,color=p[i]._color)
+    #
+fig7.suptitle('Non-grasses (all)')
+ax7.legend(handles=p, labels=nongrass_types, fancybox=True, shadow=True, title='Vegetation types', loc='center right',bbox_to_anchor=(1.5, 0.60))
+
+fig8, ax8 = plt.subplots()
+
+months = mdates.MonthLocator()
+myFmt = mdates.DateFormatter('%b')
+# plt.sca()
+fig8.autofmt_xdate(rotation='vertical')
+ax8.xaxis.set_major_formatter(myFmt)
+
+ax8.grid()
+p1=[None]*len(nongrass_types_foraged)
+
+ax8.xaxis.set_minor_locator(months)
+ax8.xaxis_date()
+p_foraged=[None]*len(nongrass_types_foraged)
+p1_foraged=[None]*len(nongrass_types_foraged)
+ax8.plot(nongrass_2.loc[(nongrass_types_foraged[1],)].index,barnacle_max*np.ones(len(nongrass_2.loc[(nongrass_types_foraged[1],)].index)), color='black')
+ax8.plot(nongrass_2.loc[(nongrass_types_foraged[1],)].index,pinkfoot_max*np.ones(len(nongrass_2.loc[(nongrass_types_foraged[1],)].index)), color='black')
+ax8.plot(nongrass_2.loc[(nongrass_types_foraged[1],)].index,greylag_max*np.ones(len(nongrass_2.loc[(nongrass_types_foraged[1],)].index)), color='black')
+ax8.annotate('Barnacle', (mdates.date2num(dt.datetime(2011, 3, 1)), barnacle_max), xytext=(-15, -15), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+ax8.annotate('Pinkfoot', (mdates.date2num(dt.datetime(2011, 3, 1)), pinkfoot_max), xytext=(12, 12), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+ax8.annotate('Greylag', (mdates.date2num(dt.datetime(2011, 3, 1)), greylag_max), xytext=(15, 15), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
+for i in range(len(nongrass_types_foraged)):
+    
+    p_foraged[i],=ax8.plot(nongrass_2.loc[(nongrass_types_foraged[i],)].index, nongrass_2.loc[(nongrass_types_foraged[i],)]['veg_mean'])
+    p1_foraged[i]=ax8.fill_between(nongrass_2.loc[(nongrass_types_foraged[i],)].index, nongrass_2.loc[(nongrass_types_foraged[i],)]['veg_up'], nongrass_2.loc[(nongrass_types_foraged[i],)]['veg_down'],alpha=0.2,color=p[i]._color)
+    #
+fig8.suptitle('Grasses (foraged)')
+ax8.legend(handles=p_foraged, labels=nongrass_types_foraged, fancybox=True, shadow=True, title='Vegetation types', loc='center right',bbox_to_anchor=(1.5, 0.60))
+
+
+### Weight development
+weight_data=pd.read_csv(data_dir+"GooseWeightStats.txt", sep='\t', header=0, dtype={'day': np.int16})
+weight_data['daydate']=my_dateparser(weight_data['day'])
+weight_data=weight_data[weight_data.iloc[:,5]>0 ]
+
+fig9, ax9 = plt.subplots(1,3)
+
+months = mdates.MonthLocator()
+myFmt = mdates.DateFormatter('%b')
+# plt.sca()
+fig9.autofmt_xdate(rotation='vertical')
+for i in range(3):
+    ax9[i].xaxis.set_major_formatter(myFmt)
+    ax9[i].grid()           
+    ax9[i].xaxis.set_minor_locator(months)
+    ax9[i].xaxis_date()
+    temp_data = weight_data[weight_data['species']==species_names[i]]
+    line9=ax9[i].errorbar(temp_data['daydate'],temp_data['mean_weight'],temp_data['mean_weight_se'], capsize=3, ms=5, marker=".")
+    ax9[i].set_title(species_names[i])
+    
+    
+    
