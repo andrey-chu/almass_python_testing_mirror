@@ -474,5 +474,30 @@ for i in range(len(grass_types)):
     p[i],=ax5.plot(grass_1.loc[(grass_types[i],)].index, grass_1.loc[(grass_types[i],)]['veg_mean'])
     p1[i]=ax5.fill_between(grass_1.loc[(grass_types[i],)].index, grass_1.loc[(grass_types[i],)]['veg_up'], grass_1.loc[(grass_types[i],)]['veg_down'],alpha=0.2,color=p[i]._color)
     #
-fig5.suptitle('Grasses')
+fig5.suptitle('Grasses (all)')
 ax5.legend(handles=p, labels=grass_types, fancybox=True, shadow=True, title='Vegetation types', loc='center right',bbox_to_anchor=(1.5, 0.60))
+
+fig6, ax6 = plt.subplots()
+
+months = mdates.MonthLocator()
+myFmt = mdates.DateFormatter('%b')
+# plt.sca()
+fig6.autofmt_xdate(rotation='vertical')
+ax6.xaxis.set_major_formatter(myFmt)
+
+ax6.grid()
+p1=[None]*len(grass_types)
+
+ax6.xaxis.set_minor_locator(months)
+ax6.xaxis_date()
+p=[None]*len(grass_types)
+ax6.plot(grass_1.loc[(grass_types[1],)].index,barnacle_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
+ax6.plot(grass_1.loc[(grass_types[1],)].index,pinkfoot_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
+ax6.plot(grass_1.loc[(grass_types[1],)].index,greylag_max*np.ones(len(grass_1.loc[(grass_types[1],)].index)), color='black')
+for i in range(len(grass_types)):
+    
+    p[i],=ax6.plot(grass_1.loc[(grass_types[i],)].index, grass_1.loc[(grass_types[i],)]['veg_mean'])
+    p1[i]=ax6.fill_between(grass_1.loc[(grass_types[i],)].index, grass_1.loc[(grass_types[i],)]['veg_up'], grass_1.loc[(grass_types[i],)]['veg_down'],alpha=0.2,color=p[i]._color)
+    #
+fig6.suptitle('Grasses (foraged)')
+ax6.legend(handles=p, labels=grass_types, fancybox=True, shadow=True, title='Vegetation types', loc='center right',bbox_to_anchor=(1.5, 0.60))
