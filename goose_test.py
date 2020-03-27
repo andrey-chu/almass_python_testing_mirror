@@ -17,6 +17,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import configparser, os
 import re
+import pendulum
 
 # this is definition whether we take into account timed values or not
 # Is there a reason to use not timed values
@@ -50,7 +51,7 @@ def ac_mask_mult(df, key, value):
 # We will use this mask instead of a standard one
 pd.DataFrame.mask = ac_mask_mult
 
-data_dir = "~/CLionProjects/GooseTests/run-directory/"
+data_dir = "~/CLionProjects/GooseTests/run-directory1/"
 source_dir = "~/CLionProjects/ALMaSS_all"
 # let us read the config data, it will be useful afterwards
 CONFIG_PATH=data_dir+'TIALMaSSConfig.cfg'
@@ -71,6 +72,7 @@ forage_data['dayordinal']=forage_data['day']+simulation_start_date_ordinal
 my_dateparser=(lambda x: pd.to_datetime(x,unit='D', origin=simulation_start_date))
 # The field 'daydate includes the date of the day for the data'
 forage_data['daydate']=my_dateparser(forage_data['day'])
+forage_data['weekdate']=forage_data['daydate'].dt.strftime('%Y-W%U')
 forage_data['habitat'] = 'Unknown'
 # A dictionary that will allow to map vegetation to habitat
 # The value is a list of tuples of last_sown_veg, veg_phase, veg_type_chr, previous_crop
@@ -348,6 +350,7 @@ for i in species_names:
     ttemp.columns = geese_foods
     forage_data['max_intake_source_'+i] = ttemp.idxmax(axis=1)
 del ttemp
+
 forage_data_months_filtered = forage_data[forage_data['geese'+is_timed_str]&((forage_data['daydate'].dt.month>7) | (forage_data['daydate'].dt.month<4))]
 
 # Now let's do the same graph, but plotting only if the specific food has maximum intake rate on the specific field
@@ -436,41 +439,43 @@ for i in range(3):
             labels1 = ["10 geese on grain","100 geese on grass","1000 geese on maize"]
             #ax[i,j].legend(*line1.legend_elements("sizes", num=6), loc='upper center', bbox_to_anchor=(0.5, -0.15),fancybox=True, shadow=True, ncol=5, title='log(#birds)')
             ax4[j].legend(handles=legend_markers, labels=labels1, loc='upper center', scatterpoints=1,bbox_to_anchor=(0.5, -0.15),fancybox=True, shadow=True, ncol=5, title='log(#birds)')
-forage_summary=forage_data_months_filtered.groupby(['daydate', 'max_intake_source_barnacle', 
+
+forage_summary=forage_data_months_filtered.groupby(['weekdate', 'max_intake_source_barnacle', 
                                                     'max_intake_source_greylag', 'max_intake_source_pinkfoot']).agg(
                                                         barnacle_sum=('barnacle'+is_timed_str, sum),greylag_sum=(
                                                             'greylag'+is_timed_str, sum),pinkfoot_sum=(
                                                                 'pinkfoot'+is_timed_str, sum))
 
-fig4a, ax4a = plt.subplots(1, 3, sharex='col', sharey='row', figsize=mpl.figure.figaspect(1.5)*2)
 
-months = mdates.MonthLocator()
-myFmt = mdates.DateFormatter('%b')
-# plt.sca()
-fig4a.autofmt_xdate(rotation='vertical')
-colours = ['blue', 'red', 'green']
-width = 0.30 
 for j in range(3):
-    ax4a[j].xaxis.set_major_formatter(myFmt)
-        
-    ax4a[j].grid()
-        
-        
-    ax4a[j].xaxis.set_minor_locator(months)
-    ax4a[j].xaxis_date()
-    p1=ax4a[j].bar(list(forage_summary.xs('grain', level=1+j).index.get_level_values(0)),
-                   list(forage_summary.xs('grain', level=1+j)[species_names[j]+'_sum']), width, color=colours[0])
-    p2=ax4a[j].bar(list(forage_summary.xs('grass', level=1+j).index.get_level_values(0)),
-                   list(forage_summary.xs('grass', level=1+j)[species_names[j]+'_sum']), width,
-                   bottom=list(forage_summary.xs('grain', level=1+j)[species_names[j]+'_sum']),color=colours[1])
-    p3=ax4a[j].bar(list(forage_summary.xs('maize', level=1+j).index.get_level_values(0)),
-                   list(forage_summary.xs('maize', level=1+j)[species_names[j]+'_sum']), width,
-                   bottom=list(forage_summary.xs('grass', level=1+j)[species_names[j]+'_sum'])
-                   +list(forage_summary.xs('grain', level=1+j)[species_names[j]+'_sum']),
-                   color=colours[2])
-    ax4a[j].set_title(species_names[j])
-ax4a[j].legend(handles=(p1[0],p2[0],p3[0]),labels=geese_foods, fancybox=True, shadow=True, title='food types', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)
+    fig4a, ax4a = plt.subplots()
     
+    months = mdates.MonthLocator()
+    myFmt = mdates.DateFormatter('%b')
+    # plt.sca()
+    fig4a.autofmt_xdate(rotation='vertical')
+    colours = ['blue', 'red', 'green']
+    width = 5
+    all_dates_str =  forage_summary.index.get_level_values(0).unique()
+    #all_dates=[pendulum.parse(i) for i in all_dates_str]
+    all_dates=[dt.datetime.strptime(i+'-0', '%Y-W%U-%w') for i in all_dates_str]
+    ax4a.xaxis.set_major_formatter(myFmt)
+        
+    ax4a.grid()
+        
+        
+    ax4a.xaxis.set_minor_locator(months)
+    ax4a.xaxis_date()
+    grain_t=forage_summary.xs('grain', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    grass_t=forage_summary.xs('grass', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    maize_t=forage_summary.xs('maize', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    p1=ax4a.bar(all_dates, grain_t, width, color=colours[0])
+    p2=ax4a.bar(all_dates, grass_t, width, bottom=grain_t,color=colours[1])
+    p3=ax4a.bar(all_dates, maize_t, width, bottom=grain_t+grass_t,color=colours[2])
+    ax4a.set_title('Food preference per month: '+species_names[j])
+    ax4a.legend(handles=(p1[0],p2[0],p3[0]),labels=geese_foods, fancybox=True, shadow=True, title='Grazing on\n(food of maximum \nintake value\n in the location)', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)
+    ax4a.set_ylabel('Number of geese')
+    ax4a.set_xlabel('Month')
 #### vegetation heights graphs
 barnacle_max = 13.4626
 pinkfoot_max = 16.6134
@@ -664,9 +669,13 @@ ax8.xaxis.set_minor_locator(months)
 ax8.xaxis_date()
 p_foraged=[None]*len(nongrass_types_foraged)
 p1_foraged=[None]*len(nongrass_types_foraged)
-ax8.plot(nongrass_2.loc[(nongrass_types_foraged[1],)].index,barnacle_max*np.ones(len(nongrass_2.loc[(nongrass_types_foraged[1],)].index)), color='black')
-ax8.plot(nongrass_2.loc[(nongrass_types_foraged[1],)].index,pinkfoot_max*np.ones(len(nongrass_2.loc[(nongrass_types_foraged[1],)].index)), color='black')
-ax8.plot(nongrass_2.loc[(nongrass_types_foraged[1],)].index,greylag_max*np.ones(len(nongrass_2.loc[(nongrass_types_foraged[1],)].index)), color='black')
+start = nongrass_2.index.get_level_values(1).min()
+end = nongrass_2.index.get_level_values(1).max()
+t = np.linspace(start.value, end.value, 100)
+t = pd.to_datetime(t)
+ax8.plot(t,barnacle_max*np.ones(len(t)), color='black')
+ax8.plot(t,pinkfoot_max*np.ones(len(t)), color='black')
+ax8.plot(t,greylag_max*np.ones(len(t)), color='black')
 ax8.annotate('Barnacle', (mdates.date2num(dt.datetime(2011, 3, 1)), barnacle_max), xytext=(-15, -15), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
 ax8.annotate('Pinkfoot', (mdates.date2num(dt.datetime(2011, 3, 1)), pinkfoot_max), xytext=(12, 12), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
 ax8.annotate('Greylag', (mdates.date2num(dt.datetime(2011, 3, 1)), greylag_max), xytext=(15, 15), textcoords='offset points', arrowprops=dict(arrowstyle='-|>'))
@@ -675,7 +684,7 @@ for i in range(len(nongrass_types_foraged)):
     p_foraged[i],=ax8.plot(nongrass_2.loc[(nongrass_types_foraged[i],)].index, nongrass_2.loc[(nongrass_types_foraged[i],)]['veg_mean'])
     p1_foraged[i]=ax8.fill_between(nongrass_2.loc[(nongrass_types_foraged[i],)].index, nongrass_2.loc[(nongrass_types_foraged[i],)]['veg_up'], nongrass_2.loc[(nongrass_types_foraged[i],)]['veg_down'],alpha=0.2,color=p[i]._color)
     #
-fig8.suptitle('Grasses (foraged areas)')
+fig8.suptitle('Non-grasses (foraged areas)')
 ax8.legend(handles=p_foraged, labels=nongrass_types_foraged, fancybox=True, shadow=True, title='Vegetation types', loc='center right',bbox_to_anchor=(1.5, 0.60))
 
 
@@ -709,31 +718,10 @@ for i in range(len(veg_types3)):
     p_foraged[i],=ax8a.plot(nongrass_3.loc[(veg_types3[i],)].index, nongrass_3.loc[(veg_types3[i],)]['veg_mean'])
     p1_foraged[i]=ax8a.fill_between(nongrass_3.loc[(veg_types3[i],)].index, nongrass_3.loc[(veg_types3[i],)]['veg_up'], nongrass_3.loc[(veg_types3[i],)]['veg_down'],alpha=0.2,color=p[i]._color)
     #
-fig8a.suptitle('Vegetation height (where grass was foraged by geese)')
+fig8a.suptitle('Vegetation height (where non-grass was foraged by geese)')
 ax8a.legend(handles=p_foraged, labels=list(veg_types3), fancybox=True, shadow=True, title='Vegetation types', loc='center right',bbox_to_anchor=(1.5, 0.60))
 
 
 
-
-### Weight development
-weight_data=pd.read_csv(data_dir+"GooseWeightStats.txt", sep='\t', header=0, dtype={'day': np.int16})
-weight_data['daydate']=my_dateparser(weight_data['day'])
-weight_data=weight_data[weight_data.iloc[:,5]>0 ]
-
-fig9, ax9 = plt.subplots(1,3)
-
-months = mdates.MonthLocator()
-myFmt = mdates.DateFormatter('%b')
-# plt.sca()
-fig9.autofmt_xdate(rotation='vertical')
-for i in range(3):
-    ax9[i].xaxis.set_major_formatter(myFmt)
-    ax9[i].grid()           
-    ax9[i].xaxis.set_minor_locator(months)
-    ax9[i].xaxis_date()
-    temp_data = weight_data[weight_data['species']==species_names[i]]
-    line9=ax9[i].errorbar(temp_data['daydate'],temp_data['mean_weight'],temp_data['mean_weight_se'], capsize=3, ms=5, marker=".")
-    ax9[i].set_title(species_names[i])
-    
     
     
