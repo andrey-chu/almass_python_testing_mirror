@@ -120,6 +120,7 @@ ax10.legend(handles=[line10,line11], labels=['simulation', 'field data'], fancyb
 
 
 # Goose energetics
+# Daily flight distance
 energetics_data=pd.read_csv(data_dir+"GooseEnergeticsData.txt", sep='\t', header=0)
 energetics_data['daydate']=my_dateparser(energetics_data['day'])
 fig11, ax11 = plt.subplots()
@@ -131,10 +132,111 @@ ax11.xaxis.set_major_formatter(myFmt)
 line12=[None]*3
 line12_sh=[None]*3
 for i in range(3):
-    temp = energetics_data[energetics_data.species.eq(species_names[i]) & energetics_data.flight_distance>0]['flight_distance']/1000
-    temp_se = energetics_data[energetics_data.species.eq(species_names[i]) & energetics_data.flight_distance>0]['flight_distance_se']/1000
-    times = energetics_data[energetics_data.species.eq(species_names[i]) & energetics_data.flight_distance>0]['daydate']
+    temp = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['flight_distance']/1000
+    temp_se = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['flight_distance_se']/1000
+    times = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['daydate']
     line12[i],=ax11.plot(times,temp, ms=5, marker=".")
     line12_sh[i]=ax11.fill_between(times, temp-temp_se, temp+ temp_se ,alpha=0.2,color=line12[i]._color)
 ax11.legend(handles=line12, labels=species_names, fancybox=True, shadow=True, title='species', loc='center right',bbox_to_anchor=(1.5, 0.60))
 fig11.suptitle('Daily flight distance')
+
+# Foraging time
+fig12, ax12 = plt.subplots()
+months = mdates.MonthLocator()
+myFmt = mdates.DateFormatter('%b')
+fig12.autofmt_xdate(rotation='vertical')
+ax12.xaxis.set_major_formatter(myFmt)
+line13=[None]*3
+line13_sh=[None]*3
+
+for i in range(3):
+    temp = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['foraging_time']
+    temp_se = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['foraging_time_se']
+    times = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['daydate']
+    line13[i],=ax12.plot(times,temp, ms=5, marker=".")
+    line13_sh[i]=ax12.fill_between(times, temp-temp_se, temp+ temp_se ,alpha=0.2,color=line12[i]._color)
+
+ax12.plot(energetics_data.daydate,energetics_data.day_length, color='black')
+ax12.annotate('day length', (mdates.date2num(dt.datetime(2010, 9, 1)), 700), xytext=(15, 15), textcoords='offset points')
+ax12.legend(handles=line13, labels=species_names, fancybox=True, shadow=True, title='species', loc='center right',bbox_to_anchor=(1.5, 0.60))
+ax12.set_ylabel('[min]')
+fig12.suptitle('Daily foraging time')
+
+
+# Daily energy balance
+fig13, ax13 = plt.subplots()
+months = mdates.MonthLocator()
+myFmt = mdates.DateFormatter('%b')
+fig13.autofmt_xdate(rotation='vertical')
+ax13.xaxis.set_major_formatter(myFmt)
+line14=[None]*3
+line14_sh=[None]*3
+
+for i in range(3):
+    temp = energetics_data[(energetics_data.species.eq(species_names[i])) & (energetics_data.flight_distance>0)]['daily_energy_balance']
+    temp_se = energetics_data[(energetics_data.species.eq(species_names[i])) & (energetics_data.flight_distance>0)]['daily_energy_balance_se']
+    times = energetics_data[(energetics_data.species.eq(species_names[i])) & (energetics_data.flight_distance>0)]['daydate']
+    line14[i],=ax13.plot(times,temp, ms=5, marker=".")
+    line14_sh[i]=ax13.fill_between(times, temp-temp_se, temp+ temp_se ,alpha=0.2,color=line12[i]._color)
+
+start = energetics_data.daydate.min()
+end = energetics_data.daydate.max()
+t = np.linspace(start.value, end.value, 100)
+t = pd.to_datetime(t)
+ax13.plot(t,np.zeros(len(t)), color='black')
+ax13.legend(handles=line14, labels=species_names, fancybox=True, shadow=True, title='species', loc='center right',bbox_to_anchor=(1.5, 0.60))
+ax13.set_ylabel('[kJ]')
+fig13.suptitle('Daily energy balance ')
+
+# Forage locations
+locations_stats_data=pd.read_csv(data_dir+"GooseIndLocCountStats.txt", sep='\t', header=0)
+locations_stats_data['daydate']=my_dateparser(locations_stats_data['day'])
+
+fig14, ax14 = plt.subplots()
+months = mdates.MonthLocator()
+myFmt = mdates.DateFormatter('%b')
+fig14.autofmt_xdate(rotation='vertical')
+ax14.xaxis.set_major_formatter(myFmt)
+line15=[None]*3
+line15_sh=[None]*3
+
+for i in range(3):
+    temp = locations_stats_data[(locations_stats_data.species.eq(species_names[i])) & (locations_stats_data.n_forage_locs>0)]['n_forage_locs']
+    temp_se = locations_stats_data[(locations_stats_data.species.eq(species_names[i])) & (locations_stats_data.n_forage_locs>0)]['n_forage_locs_se']
+    times = locations_stats_data[(locations_stats_data.species.eq(species_names[i])) & (locations_stats_data.n_forage_locs>0)]['daydate']
+    line15[i],=ax14.plot(times,temp, ms=5, marker=".")
+    line15_sh[i]=ax14.fill_between(times, temp-temp_se, temp+ temp_se ,alpha=0.2,color=line12[i]._color)
+
+
+
+ax14.legend(handles=line15, labels=species_names, fancybox=True, shadow=True, title='species', loc='center right',bbox_to_anchor=(1.5, 0.60))
+ax14.set_ylabel('')
+fig14.suptitle('Daily number of forage locations')
+
+# Flocks stats
+# we need forage data for this graph:
+forage_data=pd.read_csv(data_dir+"GooseFieldForageData.txt", sep='\t', header=0, dtype={'day': np.int16}, converters={'last_sown_veg': str.strip, 'veg_type_chr': str.strip, 'previous_crop': str.strip})
+# The field dayordinal has the current day counting from 1/1/0001
+forage_data['dayordinal']=forage_data['day']+simulation_start_date_ordinal
+# Useful function that parses the data 
+my_dateparser=(lambda x: pd.to_datetime(x,unit='D', origin=simulation_start_date))
+# The field 'daydate includes the date of the day for the data'
+forage_data['daydate']=my_dateparser(forage_data['day'])
+forage_data['weekdate']=forage_data['daydate'].dt.strftime('%Y-W%U')
+forage_data_months_filtered = forage_data[forage_data['geese'+is_timed_str]&((forage_data['daydate'].dt.month>7) | (forage_data['daydate'].dt.month<4))]
+fig15, ax15 = plt.subplots(1,3,figsize=mpl.figure.figaspect(0.5)*2)
+months = mdates.MonthLocator()
+myFmt = mdates.DateFormatter('%b')
+fig15.autofmt_xdate(rotation='vertical')
+
+for i in range(3):
+    ax15[i].xaxis.set_major_formatter(myFmt)
+    ax15[i].xaxis.set_minor_locator(months)
+    ax15[i].xaxis_date()
+    ax15[i].grid()
+    temp=forage_data_months_filtered[forage_data_months_filtered[species_names[i]+is_timed_str]>0].groupby('daydate')['season'].count()
+    ax15[i].plot(temp.index, temp, ms=5, marker=".")
+    ax15[i].set_title(species_names[i])
+fig15.suptitle('Daily flocks number')
+    
+    
