@@ -9,16 +9,21 @@ Created on Mon Mar  2 14:56:09 2020
 @author: Andrey Chuhutin
 """
 import geopandas as gpd
-import rasterio
+#import rasterio
 import pandas as pd
 import datetime as dt
 import numpy as np
 #import time
-import matplotlib as mpl
+#import matplotlib as mpl
 import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import configparser, os
+#import matplotlib.dates as mdates
+import configparser, os, glob
 import contextily as ctx
+import re
+from IPython.display import display
+simulation_start_date = dt.date(2009, 1, 1)# we should check again that this is a right date, probably should be read from somewhere
+simulation_start_date_ordinal=dt.date.toordinal(simulation_start_date)
+my_dateparser=(lambda x: pd.to_datetime(x,unit='D', origin=simulation_start_date))
 
 # def add_basemap(ax, zoom, url='http://tile.stamen.com/terrain/tileZ/tileX/tileY.png'):
 #     xmin, xmax, ymin, ymax = ax.axis()
@@ -85,3 +90,27 @@ ax.set_title('Roosting areas')
 #     bound=v_out_crs.geometry,
 #     #transform=transform,
 # )
+# 
+AORfiles_list=glob.glob(os.path.expanduser(data_dir)+'AOR*.txt')
+regex=re.compile("(?<=AOR_)(.*?)(?=.txt)")
+AOR_dataframe = pd.read_csv(os.path.expanduser(data_dir)+'AOR_Probe.txt', sep='\t', header=0)
+
+for i in AORfiles_list:
+    species_name = regex.search(i).group(0)
+    if any(species_name in s for s in species_names):
+        AOR_data=pd.read_csv(i, sep='\t', header=0)
+        
+        AOR_data['Species']=species_name
+        AOR_dataframe = pd.concat([AOR_dataframe,AOR_data])
+# let us transform the table to what Lars likes it to be using melt:
+regex1=re.compile("[0-9]*?$")
+AOR_dataframe1=AOR_dataframe.melt(id_vars=['Year', 'Day', 'Species', 'Total_no'], value_vars=[ 'Cells50', 'Cells100', 'Cells200', 'Cells400'], var_name='Cell_size', value_name='Cells')
+AOR_dataframe1["Cell_size"]=[regex1.search(s).group(0) for s in AOR_dataframe1["Cell_size"]]
+AOR_dataframe2=AOR_dataframe.melt(id_vars=['Year', 'Day', 'Species', 'Total_no'], value_vars=[ 'Occupied50', 'Occupied100', 'Occupied200', 'Occupied400'], var_name='Cell_size', value_name='Occupied')
+AOR_dataframe2["Cell_size"]=[regex1.search(s).group(0) for s in AOR_dataframe2["Cell_size"]]
+AOR_dataframe_merged= pd.merge(AOR_dataframe1, AOR_dataframe2)
+AOR_dataframe_merged['Date']=my_dateparser(np.uint(AOR_dataframe_merged['Day']))
+AOR_dataframe_merged['Proportion_occupied'] = AOR_dataframe_merged['Occupied']/AOR_dataframe_merged['Cells']
+
+print ("Geese AOR table:")
+display(AOR_dataframe_merged)

@@ -219,7 +219,7 @@ forage_data=pd.read_csv(data_dir+"GooseFieldForageData.txt", sep='\t', header=0,
 # The field dayordinal has the current day counting from 1/1/0001
 forage_data['dayordinal']=forage_data['day']+simulation_start_date_ordinal
 # Useful function that parses the data 
-my_dateparser=(lambda x: pd.to_datetime(x,unit='D', origin=simulation_start_date))
+#my_dateparser=(lambda x: pd.to_datetime(x,unit='D', origin=simulation_start_date))
 # The field 'daydate includes the date of the day for the data'
 forage_data['daydate']=my_dateparser(forage_data['day'])
 forage_data['weekdate']=forage_data['daydate'].dt.strftime('%Y-W%U')
