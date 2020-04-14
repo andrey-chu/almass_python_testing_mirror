@@ -18,13 +18,15 @@ import matplotlib.dates as mdates
 import configparser, os
 import re
 import pendulum
-
+import zlib
+import zipfile
 # this is definition whether we take into account timed values or not
 # Is there a reason to use not timed values
 is_timed = True
 
 species_names = ["barnacle", "greylag", "pinkfoot"]
 geese_foods = ['grain', 'grass', 'maize']
+geese_foods_wcereal = ['grain', 'grass', 'maize', 'cereal']
 if is_timed==True:
     is_timed_str = '_timed'
 else:
@@ -51,8 +53,8 @@ def ac_mask_mult(df, key, value):
 # We will use this mask instead of a standard one
 pd.DataFrame.mask = ac_mask_mult
 
-data_dir = "~/CLionProjects/GooseTests/run-directory1/"
-source_dir = "~/CLionProjects/ALMaSS_all"
+data_dir = "rundir/"#"~/CLionProjects/GooseTests/run-directory1/"
+source_dir = "source" #"~/CLionProjects/ALMaSS_all"
 # let us read the config data, it will be useful afterwards
 CONFIG_PATH=data_dir+'TIALMaSSConfig.cfg'
 with open(os.path.expanduser(CONFIG_PATH), 'r') as f:
@@ -63,8 +65,11 @@ config.read_string(config_string)
 simulation_start_date = dt.date(2009, 1, 1)# we should check again that this is a right date, probably should be read from somewhere
 simulation_start_date_ordinal=dt.date.toordinal(simulation_start_date)
 
-# Forage data first: load data , while stripping the spaces 
+# Forage data first: unzip, (it was zipped by prepare in order to be uploadable) load data , while stripping the spaces 
 #forage_data=pd.read_csv(data_dir+"GooseFieldForageData.txt", sep='\t', header=0, parse_dates=['day'], dtype={'day': 'str'},date_parser=my_dateparser)
+
+with zipfile.ZipFile(data_dir+"GooseFieldForageData.txt.gz", 'r') as zip_ref:
+    zip_ref.extractall(data_dir)
 forage_data=pd.read_csv(data_dir+"GooseFieldForageData.txt", sep='\t', header=0, dtype={'day': np.int16}, converters={'last_sown_veg': str.strip, 'veg_type_chr': str.strip, 'previous_crop': str.strip})
 # The field dayordinal has the current day counting from 1/1/0001
 forage_data['dayordinal']=forage_data['day']+simulation_start_date_ordinal
@@ -130,7 +135,54 @@ veg_to_habitat = {
               ],
     'Undefined':[('Undefined', [2,3], '*', '*')]
     }
-
+# list of cereals this list comes from code: 
+# bool Landscape::SupplyIsCereal2(TTypesOfVegetation a_vege_type) in Landscape.cpp
+Cereals_list=[
+	'SpringBarley',
+	'SpringBarleySpr',
+	'WinterBarley',
+	'SpringWheat',
+	'WinterWheat',
+	'WinterRye',
+	'Oats',
+	'Triticale',
+	'SpringBarleySeed',
+	'SpringBarleyStrigling',
+	'SpringBarleyStriglingSingle',
+	'SpringBarleyStriglingCulm',
+	'WinterWheatStrigling',
+	'WinterWheatStriglingSingle',
+	'WinterWheatStriglingCulm',
+	'OWinterBarley',
+	'OWinterBarleyExt',
+	'OWinterRye',
+	'SpringBarleyGrass',
+	'SpringBarleyCloverGrass',
+	'SpringBarleyPeaCloverGrassStrigling',
+	'OSpringBarley',
+	'OSpringBarleyPigs',
+	'OWinterWheatUndersown',
+	'OWinterWheat',
+	'OOats',
+	'OTriticale',
+	'WWheatPControl',
+	'WWheatPToxicControl',
+	'WWheatPTreatment',
+	'AgroChemIndustryCereal',
+	'SpringBarleyPTreatment',
+	'SpringBarleySKManagement',
+	'OSpringBarleyExt',
+	'OSpringBarleyGrass',
+	'OSpringBarleyClover',
+	'PLWinterWheat',
+	'PLWinterBarley',
+	'PLWinterRye',
+	'PLWinterTriticale',
+	'PLSpringWheat',
+	'PLSpringBarley',
+	'NLWinterWheat',
+	'NLSpringBarley',
+        ]
 # let us combine the fields for testing
 t = time.time()
 for habitat_i in veg_to_habitat.keys():
@@ -166,7 +218,19 @@ for i in range(len(species_names)):
                                                                                    title1: forage_data_months_filtered[temp][geese_foods[j]]})
 elapsed = time.time() - t
 print('Filtering foraging data--> Elapsed: %s' % (elapsed))
+
+
+### Habitat use
+
+
+###
+
+
 # There are many ways to visualise, we will try to use pandas/matplotlib visualisation first, when more needed we move to seaborn or altair
+
+
+
+
 fig, ax = plt.subplots(3, 3, sharex='col', sharey='row', figsize=mpl.figure.figaspect(2.5)*2)
 
 months = mdates.MonthLocator()
@@ -349,6 +413,9 @@ for i in species_names:
     ttemp = pd.DataFrame(data=forage_data[['grain_intake_'+i,'grass_'+i,'maize_intake_'+i]])
     ttemp.columns = geese_foods
     forage_data['max_intake_source_'+i] = ttemp.idxmax(axis=1)
+    forage_data['max_intake_source_wcereal_'+i] =  forage_data['max_intake_source_'+i]
+    # since when grass
+    forage_data.loc[forage_data['veg_type_chr'].isin(Cereals_list) & (forage_data['max_intake_source_'+i]=='grass'),'max_intake_source_wcereal_'+i]='cereal'
 del ttemp
 
 forage_data_months_filtered = forage_data[forage_data['geese'+is_timed_str]&((forage_data['daydate'].dt.month>7) | (forage_data['daydate'].dt.month<4))]
@@ -445,7 +512,11 @@ forage_summary=forage_data_months_filtered.groupby(['weekdate', 'max_intake_sour
                                                         barnacle_sum=('barnacle'+is_timed_str, sum),greylag_sum=(
                                                             'greylag'+is_timed_str, sum),pinkfoot_sum=(
                                                                 'pinkfoot'+is_timed_str, sum))
-
+forage_summary_wcereal=forage_data_months_filtered.groupby(['weekdate', 'max_intake_source_wcereal_barnacle', 
+                                                    'max_intake_source_wcereal_greylag', 'max_intake_source_wcereal_pinkfoot']).agg(
+                                                        barnacle_sum=('barnacle'+is_timed_str, sum),greylag_sum=(
+                                                            'greylag'+is_timed_str, sum),pinkfoot_sum=(
+                                                                'pinkfoot'+is_timed_str, sum))
 
 for j in range(3):
     fig4a, ax4a = plt.subplots()
@@ -454,9 +525,9 @@ for j in range(3):
     myFmt = mdates.DateFormatter('%b')
     # plt.sca()
     fig4a.autofmt_xdate(rotation='vertical')
-    colours = ['blue', 'red', 'green']
+    colours = ['blue', 'red', 'green', 'yellow']
     width = 5
-    all_dates_str =  forage_summary.index.get_level_values(0).unique()
+    all_dates_str =  forage_summary_wcereal.index.get_level_values(0).unique()
     #all_dates=[pendulum.parse(i) for i in all_dates_str]
     all_dates=[dt.datetime.strptime(i+'-0', '%Y-W%U-%w') for i in all_dates_str]
     ax4a.xaxis.set_major_formatter(myFmt)
@@ -466,14 +537,16 @@ for j in range(3):
         
     ax4a.xaxis.set_minor_locator(months)
     ax4a.xaxis_date()
-    grain_t=forage_summary.xs('grain', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
-    grass_t=forage_summary.xs('grass', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
-    maize_t=forage_summary.xs('maize', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    grain_t=forage_summary_wcereal.xs('grain', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    grass_t=forage_summary_wcereal.xs('grass', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    maize_t=forage_summary_wcereal.xs('maize', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    cereal_t=forage_summary_wcereal.xs('cereal', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
     p1=ax4a.bar(all_dates, grain_t, width, color=colours[0])
     p2=ax4a.bar(all_dates, grass_t, width, bottom=grain_t,color=colours[1])
     p3=ax4a.bar(all_dates, maize_t, width, bottom=grain_t+grass_t,color=colours[2])
+    p4=ax4a.bar(all_dates, maize_t, width, bottom=grain_t+grass_t+maize_t,color=colours[3])
     ax4a.set_title('Food preference per month: '+species_names[j])
-    ax4a.legend(handles=(p1[0],p2[0],p3[0]),labels=geese_foods, fancybox=True, shadow=True, title='Grazing on\n(food of maximum \nintake value\n in the location)', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)
+    ax4a.legend(handles=(p1[0],p2[0],p3[0], p4[0]),labels=geese_foods_wcereal, fancybox=True, shadow=True, title='Grazing on\n(food of maximum \nintake value\n in the location)', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)
     ax4a.set_ylabel('Number of geese')
     ax4a.set_xlabel('Month')
 #### vegetation heights graphs

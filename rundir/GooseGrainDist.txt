@@ -1,0 +1,2 @@
+season	grain_dist
+1	low

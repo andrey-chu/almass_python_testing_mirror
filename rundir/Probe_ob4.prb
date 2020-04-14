@@ -1,0 +1,51 @@
+Probe 0
+Reporting Period   (1 Annual, 2= Monthly, 3= per timestep)
+2
+File record on off (0/1)
+1
+Target types (e.g. Egg, Juvs, Females for spiders; Male, Female for Vole)
+0  0  0  0  1  0  0  0  0  0
+No Areas
+1
+No Reference data
+0
+Type of Reference Data (1=Element, 2=VegType, 3=Farm)
+0
+Areas
+0     0  40000   40000
+0     0     0     0
+0     0     0     0
+0     0     0     0
+0     0     0     0
+0     0     0     0
+0     0     0     0
+0     0     0     0
+0     0     0     0
+0     0     0     0
+Reference Data
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+999
+

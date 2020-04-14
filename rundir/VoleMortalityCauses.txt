@@ -1,0 +1,2 @@
+Year	Day	MStarve	FStarve	MBck	FBck	MFarm	FFarm	MDisp	FDisp	MPred	FPred	MLife	FLife	MPest	FPest		
+1	1	0	0	40	44	0	0	184	149	0	0	0	0	0	0

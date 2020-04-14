@@ -1,0 +1,1 @@
+Year	inCrop	inField	offField

@@ -1,0 +1,1 @@
+year	day	Resistgene	Neutralgene	Frequency	Population Size

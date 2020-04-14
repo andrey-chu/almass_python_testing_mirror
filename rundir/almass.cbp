@@ -1,0 +1,1902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="almass"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\qt\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="almass_cmd">
+				<Option output="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_cmd" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+					<Add directory="/home/andrey/CLionProjects/ALMaSS_all"/>
+					<Add directory="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_cmd_autogen/include"/>
+					<Add directory="/home/andrey/CLionProjects/ALMaSS_all/../lib"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 almass_cmd"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="almass_cmd/fast">
+				<Option output="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_cmd" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+					<Add directory="/home/andrey/CLionProjects/ALMaSS_all"/>
+					<Add directory="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_cmd_autogen/include"/>
+					<Add directory="/home/andrey/CLionProjects/ALMaSS_all/../lib"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 almass_cmd/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="almass_qt">
+				<Option output="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_qt" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add directory="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+					<Add directory="/home/andrey/CLionProjects/ALMaSS_all"/>
+					<Add directory="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_qt_autogen/include"/>
+					<Add directory="/home/andrey/CLionProjects/ALMaSS_all/../lib"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 almass_qt"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="almass_qt/fast">
+				<Option output="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_qt" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add directory="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+					<Add directory="/home/andrey/CLionProjects/ALMaSS_all"/>
+					<Add directory="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_qt_autogen/include"/>
+					<Add directory="/home/andrey/CLionProjects/ALMaSS_all/../lib"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 almass_qt/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="almass_cmd_autogen">
+				<Option working_dir="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 almass_cmd_autogen"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="almass_qt_autogen">
+				<Option working_dir="/home/andrey/CLionProjects/GooseTests/run-directory1"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 almass_qt_autogen"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/andrey/CLionProjects/GooseTests/run-directory1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/ALMaSSDefines.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/ALMaSS_CmdLine.cpp">
+			<Option target="almass_cmd"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/ALMaSS_Random.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/ALMaSS_Random.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/ALMaSS_Setup.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/AOR_Probe.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/AOR_Probe.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/BinaryMapBase.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/BinaryMapBase.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/CurveClasses.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/CurveClasses.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/MovementMap.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/MovementMap.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/PopulationManager.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/PopulationManager.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/PositionMap.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/BatchALMaSS/PositionMap.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Bembidion/Bembidion_All.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Bembidion/Bembidion_All.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/GooseBarnacle_All.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/GooseBarnacle_All.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/GooseGreylag_All.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/GooseGreylag_All.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/GooseMemoryMap.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/GooseMemoryMap.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/GoosePinkFooted_All.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/GoosePinkFooted_All.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/Goose_Base.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/Goose_Base.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/Goose_Population_Manager.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/GooseManagement/Goose_Population_Manager.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Hare/HareForagenPeg.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Hare/Hare_All.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Hare/Hare_All.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Hare/Hare_THare.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/HoneyBee.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/HoneyBee.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/HoneyBee_Colony.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/HoneyBee_Colony.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/apisram_states.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/hbmath.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/hbmath.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/hbspreadsheet.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/hbspreadsheet.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/hbtools.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/hbtools.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/hive.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/hive.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/testlandscape.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/testlandscape.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/waggle.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/HoneyBee/waggle.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Hunters/Hunters_all.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Hunters/Hunters_all.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Calendar.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Calendar.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Configurator.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Configurator.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Croprotation.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Croprotation.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Elements.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Elements.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Farm.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Farm.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/FarmFuncs.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Hedgebanks.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Landscape.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Landscape.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/MapErrorMsg.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/MapErrorMsg.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Map_cfg.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Map_cfg.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Misc.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Misc.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Pesticide.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Pesticide.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Plants.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Plants.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Rastermap.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Rastermap.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Weather.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/Weather.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/AgroChemIndustryCereal.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/AgroChemIndustryCereal.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/BroadBeans.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/BroadBeans.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Carrots.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Carrots.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/CloverGrassGrazed1.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/CloverGrassGrazed1.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/CloverGrassGrazed2.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/CloverGrassGrazed2.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/DummyCropPestTesting.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/DummyCropPestTesting.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/FieldPeas.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/FieldPeas.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/FieldPeasSilage.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/FieldPeasSilage.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/FieldPeasStrigling.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/FieldPeasStrigling.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/FodderGrass.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/FodderGrass.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Fodderbeet.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Fodderbeet.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Maize.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Maize.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/MaizeSilage.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/MaizeSilage.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/MaizeStrigling.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/MaizeStrigling.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLBeet.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLBeet.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLBeetSpring.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLBeetSpring.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLCabbage.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLCabbage.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLCabbageSpring.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLCabbageSpring.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLCarrots.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLCarrots.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLCarrotsSpring.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLCarrotsSpring.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLCatchPeaCrop.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLCatchPeaCrop.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazed1.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazed1.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazed1Spring.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazed1Spring.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazed2.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazed2.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazedExtensive1.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazedExtensive1.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazedExtensive1Spring.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazedExtensive1Spring.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazedExtensive2.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazedExtensive2.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazedExtensiveLast.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazedExtensiveLast.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazedLast.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLGrassGrazedLast.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLMaize.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLMaize.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLMaizeSpring.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLMaizeSpring.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLOrchardCrop.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLOrchardCrop.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLPermanentGrassGrazed.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLPermanentGrassGrazed.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLPermanentGrassGrazedExtensive.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLPermanentGrassGrazedExtensive.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLPotatoes.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLPotatoes.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLPotatoesSpring.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLPotatoesSpring.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLSpringBarley.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLSpringBarley.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLSpringBarleySpring.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLSpringBarleySpring.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLTulips.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLTulips.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLWinterWheat.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NLWinterWheat.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NorwegianOats.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NorwegianOats.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NorwegianPotatoes.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NorwegianPotatoes.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NorwegianSpringBarley.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/NorwegianSpringBarley.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OBarleyPeaCloverGrass.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OBarleyPeaCloverGrass.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OCarrots.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OCarrots.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OCloverGrassGrazed1.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OCloverGrassGrazed1.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OCloverGrassGrazed2.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OCloverGrassGrazed2.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OCloverGrassSilage1.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OCloverGrassSilage1.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OFieldPeas.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OFieldPeas.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OFieldPeasSilage.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OFieldPeasSilage.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OFirstYearDanger.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OFirstYearDanger.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OFodderbeet.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OFodderbeet.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OGrazingPigs.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OGrazingPigs.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OMaizeSilage.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OMaizeSilage.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OOats.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OOats.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OPermanentGrassGrazed.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OPermanentGrassGrazed.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OPotatoes.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OPotatoes.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSBarleySilage.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSBarleySilage.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSeedGrass1.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSeedGrass1.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSeedGrass2.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSeedGrass2.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSpringBarley.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSpringBarley.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSpringBarleyExt.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSpringBarleyExt.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSpringBarleyPigs.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OSpringBarleyPigs.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OTriticale.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OTriticale.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterBarley.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterBarley.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterBarleyExt.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterBarleyExt.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterRape.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterRape.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterRye.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterRye.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterWheat.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterWheat.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterWheatUndersown.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterWheatUndersown.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterWheatUndersownExt.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OWinterWheatUndersownExt.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Oats.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Oats.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OrchardCrop.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/OrchardCrop.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLBeans.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLBeans.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLBeet.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLBeet.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLBeetSpr.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLBeetSpr.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLCarrots.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLCarrots.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLFodderLucerne1.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLFodderLucerne1.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLFodderLucerne2.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLFodderLucerne2.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLMaize.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLMaize.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLMaizeSilage.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLMaizeSilage.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLPotatoes.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLPotatoes.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLSpringBarley.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLSpringBarley.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLSpringBarleySpr.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLSpringBarleySpr.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLSpringWheat.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLSpringWheat.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterBarley.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterBarley.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterRape.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterRape.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterRye.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterRye.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterTriticale.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterTriticale.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterWheat.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterWheat.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterWheatLate.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PLWinterWheatLate.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PermanentGrassGrazed.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PermanentGrassGrazed.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PermanentGrassLowYield.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PermanentGrassLowYield.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PermanentGrassTussocky.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PermanentGrassTussocky.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PermanentSetAside.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PermanentSetAside.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Potatoes.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Potatoes.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PotatoesIndustry.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/PotatoesIndustry.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarley.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarley.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyCloverGrass.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyCloverGrass.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyCloverGrassStrigling.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyCloverGrassStrigling.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyPTreatment.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyPTreatment.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyPeaCloverGrassStrigling.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyPeaCloverGrassStrigling.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleySKManagement.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleySKManagement.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleySeed.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleySeed.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleySilage.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleySilage.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleySpr.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleySpr.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyStrigling.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyStrigling.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyStriglingCulm.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyStriglingCulm.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyStriglingSingle.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringBarleyStriglingSingle.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringRape.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/SpringRape.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Sugarbeet.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Sugarbeet.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Triticale.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/Triticale.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WWheatPControl.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WWheatPControl.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WWheatPToxicControl.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WWheatPToxicControl.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WWheatPTreatment.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WWheatPTreatment.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterBarley.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterBarley.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterBarleyStrigling.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterBarleyStrigling.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterRapeStrigling.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterRapeStrigling.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterRye.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterRye.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterRyeStrigling.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterRyeStrigling.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterWheat.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterWheat.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterWheatStrigling.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterWheatStrigling.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterWheatStriglingCulm.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterWheatStriglingCulm.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterWheatStriglingSingle.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/WinterWheatStriglingSingle.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/YoungForest.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/YoungForest.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/seedgrass1.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/seedgrass1.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/seedgrass2.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/seedgrass2.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/setaside.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/setaside.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/winterrape.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Landscape/cropprogs/winterrape.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Newt/Newt.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Newt/Newt.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Newt/Newt_Population_Manager.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Newt/Newt_Population_Manager.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/OliveMoth/lacewing.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/OliveMoth/lacewing.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/OliveMoth/olivemoth.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/OliveMoth/olivemoth.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Osmia/Osmia.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Osmia/Osmia.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Osmia/Osmia_Population_Manager.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Osmia/Osmia_Population_Manager.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Partridge/Partridge_All.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Partridge/Partridge_All.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Partridge/Partridge_Communication.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Partridge/Partridge_Communication.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Partridge/Partridge_Covey.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Partridge/Partridge_Covey.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Partridge/Partridge_Population_Manager.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Partridge/Partridge_Population_Manager.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Rabbit/Rabbit.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Rabbit/Rabbit.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Rabbit/Rabbit_Population_Manager.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Rabbit/Rabbit_Population_Manager.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RodenticideModelling/Rodenticide.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RodenticideModelling/Rodenticide.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RodenticideModelling/RodenticidePredators.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RodenticideModelling/RodenticidePredators.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_Population_Manager.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_adult.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_all.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_base.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_constants.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_constants.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_fawn.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_female.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_grid.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_male.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_pop_manager.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/RoeDeer/Roe_range_qual.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Skylark/SkylarkConfigs.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Skylark/skylarks_all.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Skylark/skylarks_all.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Spiders/Erigone.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Spiders/Erigone.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Spiders/Erigone_Population_Manager.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Spiders/Erigone_Population_Manager.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Spiders/Haplodrassus.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Spiders/Haplodrassus.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Spiders/Haplodrassus_Population_Manager.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Spiders/Haplodrassus_Population_Manager.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Spiders/Spider_BaseClasses.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Spiders/Spider_BaseClasses.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Vole/GeneticMaterial.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Vole/GeneticMaterial.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Vole/Predators.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Vole/Predators.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Vole/VolePopulationManager.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Vole/VolePopulationManager.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Vole/Vole_all.cpp">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/Vole/vole_all.h">
+			<Option target="almass_cmd"/>
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/almass.qrc">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/clickablelabel.cpp">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/clickablelabel.h">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/colmap.cpp">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/colmap.h">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/habitatmap.cpp">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/habitatmap.h">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/honeycombcell.cpp">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/honeycombcell.h">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/main.cpp">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/mainwindow.cpp">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/mainwindow.h">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/mwhivetool.cpp">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/mwhivetool.h">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/resourcebrowser.cpp">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/resourcebrowser.h">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_cmd_autogen/mocs_compilation.cpp">
+			<Option target="almass_cmd"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_qt_autogen/WTNNEUUVOU/qrc_almass.cpp">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_qt_autogen/WTNNEUUVOU/qrc_almass.cpp.rule">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/GooseTests/run-directory1/almass_qt_autogen/mocs_compilation.cpp">
+			<Option target="almass_qt"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/andrey/CLionProjects/ALMaSS_all/qt/almass.qrc">
+			<Option virtualFolder="CMake Files\qt\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

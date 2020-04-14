@@ -1,0 +1,38 @@
+Polyref	Openness	ElementType	CentroidX	CentroidY
+200995	195	    Permanent Pasture	10875	16713
+95769	207	                Field	23256	8854
+145247	406	 PermPastureTussocky	22531	13400
+65728	98	                Field	16475	6830
+99600	163	                Field	30760	9089
+145247	406	 PermPastureTussocky	22531	13400
+144560	368	 PermPastureTussocky	22862	13212
+156216	408	 PermPastureTussocky	21206	13982
+77441	277	                Field	22968	7516
+77441	277	                Field	22968	7516
+186349	132	                Field	2365	15568
+156216	408	 PermPastureTussocky	21206	13982
+133590	147	                Field	32867	12140
+138583	205	                Field	33195	12665
+161800	406	    Permanent Pasture	20757	14190
+144517	433	    Permanent Pasture	21908	13207
+107534	0	                River	19555	12051
+99352	129	                Field	25030	8962
+298889	0	       Field Boundary	6665	17606
+142674	95	                Field	32329	13070
+145247	406	 PermPastureTussocky	22531	13400
+132566	114	                Field	32618	11921
+90422	158	                Field	16907	8270
+131651	135	                Field	29054	11789
+84820	217	                Field	23110	8442
+178383	65	                Field	3053	15071
+84820	217	                Field	23110	8442
+209105	153	 PermPastureTussocky	7315	17989
+148428	496	 PermPastureTussocky	21500	13448
+147781	139	                Field	33500	13528
+146784	126	                Field	33667	13243
+147781	139	                Field	33500	13528
+139824	119	                Field	32281	12767
+84820	217	                Field	23110	8442
+151640	405	 PermPastureTussocky	21849	13723
+145247	406	 PermPastureTussocky	22531	13400
+91699	0	                 Pond	17243	12271
