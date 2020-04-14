@@ -19,6 +19,7 @@ import configparser, os
 import re
 import pendulum
 import zlib
+import lzma
 import zipfile
 # this is definition whether we take into account timed values or not
 # Is there a reason to use not timed values
@@ -54,7 +55,7 @@ def ac_mask_mult(df, key, value):
 pd.DataFrame.mask = ac_mask_mult
 
 data_dir = "rundir/"#"~/CLionProjects/GooseTests/run-directory1/"
-source_dir = "source" #"~/CLionProjects/ALMaSS_all"
+source_dir = "ALMaSS_all" #"~/CLionProjects/ALMaSS_all"
 # let us read the config data, it will be useful afterwards
 CONFIG_PATH=data_dir+'TIALMaSSConfig.cfg'
 with open(os.path.expanduser(CONFIG_PATH), 'r') as f:

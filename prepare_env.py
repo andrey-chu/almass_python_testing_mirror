@@ -12,6 +12,8 @@ import os
 import errno
 import distutils.dir_util
 import zlib
+import bz2
+import lzma
 import zipfile
 data_dir = "~/CLionProjects/GooseTests/run-directory1/"
 #source_dir = "~/CLionProjects/ALMaSS_all"
@@ -41,7 +43,7 @@ for i in datafileslist:
     if i == "GooseFieldForageData.txt":
         cwd_s = os.getcwd()
         os.chdir(os.path.expanduser(data_dir+"/"))
-        zipObj = zipfile.ZipFile(os.path.expanduser(data_dir_new+"/"+i+".gz"), 'w', compression=zipfile.ZIP_DEFLATED)
+        zipObj = zipfile.ZipFile(os.path.expanduser(data_dir_new+"/"+i+".gz"), 'w', compression=zipfile.ZIP_LZMA)
         zipObj.write(os.path.expanduser(i))
         zipObj.close()
         os.chdir(cwd_s)
