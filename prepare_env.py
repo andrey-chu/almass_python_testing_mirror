@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 The script that prepares the environment: copies files where they belong in order to 
-be accessable in the repo
+be accessable in the repo, archives the 500Mb big GooseFieldForageData
 Created on Tue Apr 14 13:04:21 2020
 
 @author: andrey
@@ -12,8 +12,8 @@ import os
 import errno
 import distutils.dir_util
 import zlib
-import bz2
-import lzma
+import bz2 # Use bz2 or zlib at work
+import lzma # Use LZMA at home, where internet connection is bad
 import zipfile
 data_dir = "~/CLionProjects/GooseTests/run-directory1/"
 #source_dir = "~/CLionProjects/ALMaSS_all"
@@ -43,7 +43,7 @@ for i in datafileslist:
     if i == "GooseFieldForageData.txt":
         cwd_s = os.getcwd()
         os.chdir(os.path.expanduser(data_dir+"/"))
-        zipObj = zipfile.ZipFile(os.path.expanduser(data_dir_new+"/"+i+".gz"), 'w', compression=zipfile.ZIP_LZMA)
+        zipObj = zipfile.ZipFile(os.path.expanduser(data_dir_new+"/"+i+".gz"), 'w', compression=zipfile.ZIP_LZMA) #ZIP_BZIP2 ZIP_DEFLATED
         zipObj.write(os.path.expanduser(i))
         zipObj.close()
         os.chdir(cwd_s)

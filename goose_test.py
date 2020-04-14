@@ -545,7 +545,7 @@ for j in range(3):
     p1=ax4a.bar(all_dates, grain_t, width, color=colours[0])
     p2=ax4a.bar(all_dates, grass_t, width, bottom=grain_t,color=colours[1])
     p3=ax4a.bar(all_dates, maize_t, width, bottom=grain_t+grass_t,color=colours[2])
-    p4=ax4a.bar(all_dates, maize_t, width, bottom=grain_t+grass_t+maize_t,color=colours[3])
+    p4=ax4a.bar(all_dates, cereal_t, width, bottom=grain_t+grass_t+maize_t,color=colours[3])
     ax4a.set_title('Food preference per month: '+species_names[j])
     ax4a.legend(handles=(p1[0],p2[0],p3[0], p4[0]),labels=geese_foods_wcereal, fancybox=True, shadow=True, title='Grazing on\n(food of maximum \nintake value\n in the location)', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)
     ax4a.set_ylabel('Number of geese')

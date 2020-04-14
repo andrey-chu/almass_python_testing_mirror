@@ -3,11 +3,6 @@ AlleleFreqs.txt
 almass
 almass.cbp
 almass_cmd
-almass_cmd_all_flyin_flyout_0_0033
-almass_cmd.exe
-almass_cmd_pinkfoot_flyin_flyout_0_0033
-almass_qt
-almass_qt.exe
 almass-version.txt
 AOR_barnacle.txt
 AOR_greylag.txt
@@ -116,7 +111,6 @@ Probe.res
 ReallyBigOutput.txt
 RipleysOutput.txt
 SkFledgelingProbe.txt
-temppoly.txt
 The2013Farmref.txt
 TIALMaSSConfig.cfg
 TI_inifile.ini

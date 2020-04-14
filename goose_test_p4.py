@@ -13,6 +13,9 @@ import matplotlib as mpl
 import matplotlib.dates as mdates
 import configparser, os, glob
 import re
+import zlib
+import lzma
+import zipfile
 
 simulation_start_date = dt.date(2009, 1, 1)# we should check again that this is a right date, probably should be read from somewhere
 simulation_start_date_ordinal=dt.date.toordinal(simulation_start_date)
@@ -82,6 +85,8 @@ for i in range(3):
 fig2.suptitle('Daily number emmigrated')
 
 # Flock sizes
+with zipfile.ZipFile(data_dir+"GooseFieldForageData.txt.gz", 'r') as zip_ref:
+    zip_ref.extractall(data_dir)
 forage_data=pd.read_csv(data_dir+"GooseFieldForageData.txt", sep='\t', header=0, dtype={'day': np.int16}, converters={'last_sown_veg': str.strip, 'veg_type_chr': str.strip, 'previous_crop': str.strip})
 field_data = pd.read_csv(data_dir+"fieldobs_01112017.tsv", sep='\t', header=0, converters={'species':str.lower})
 # The field dayordinal has the current day counting from 1/1/0001
