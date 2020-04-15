@@ -518,9 +518,9 @@ forage_summary_wcereal=forage_data_months_filtered.groupby(['weekdate', 'max_int
                                                         barnacle_sum=('barnacle'+is_timed_str, sum),greylag_sum=(
                                                             'greylag'+is_timed_str, sum),pinkfoot_sum=(
                                                                 'pinkfoot'+is_timed_str, sum))
-
+fig4a, ax4a = plt.subplots(1,3,sharex='col', sharey='row', figsize=mpl.figure.figaspect(0.9)*2)
 for j in range(3):
-    fig4a, ax4a = plt.subplots()
+    
     
     months = mdates.MonthLocator()
     myFmt = mdates.DateFormatter('%b')
@@ -531,25 +531,210 @@ for j in range(3):
     all_dates_str =  forage_summary_wcereal.index.get_level_values(0).unique()
     #all_dates=[pendulum.parse(i) for i in all_dates_str]
     all_dates=[dt.datetime.strptime(i+'-0', '%Y-W%U-%w') for i in all_dates_str]
-    ax4a.xaxis.set_major_formatter(myFmt)
+    ax4a[j].xaxis.set_major_formatter(myFmt)
         
-    ax4a.grid()
+    ax4a[j].grid()
         
         
-    ax4a.xaxis.set_minor_locator(months)
-    ax4a.xaxis_date()
+    ax4a[j].xaxis.set_minor_locator(months)
+    ax4a[j].xaxis_date()
     grain_t=forage_summary_wcereal.xs('grain', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
     grass_t=forage_summary_wcereal.xs('grass', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
     maize_t=forage_summary_wcereal.xs('maize', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
     cereal_t=forage_summary_wcereal.xs('cereal', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
-    p1=ax4a.bar(all_dates, grain_t, width, color=colours[0])
-    p2=ax4a.bar(all_dates, grass_t, width, bottom=grain_t,color=colours[1])
-    p3=ax4a.bar(all_dates, maize_t, width, bottom=grain_t+grass_t,color=colours[2])
-    p4=ax4a.bar(all_dates, cereal_t, width, bottom=grain_t+grass_t+maize_t,color=colours[3])
-    ax4a.set_title('Food preference per month: '+species_names[j])
-    ax4a.legend(handles=(p1[0],p2[0],p3[0], p4[0]),labels=geese_foods_wcereal, fancybox=True, shadow=True, title='Grazing on\n(food of maximum \nintake value\n in the location)', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)
-    ax4a.set_ylabel('Number of geese')
-    ax4a.set_xlabel('Month')
+    p1=ax4a[j].bar(all_dates, grain_t, width, color=colours[0])
+    p2=ax4a[j].bar(all_dates, grass_t, width, bottom=grain_t,color=colours[1])
+    p3=ax4a[j].bar(all_dates, maize_t, width, bottom=grain_t+grass_t,color=colours[2])
+    p4=ax4a[j].bar(all_dates, cereal_t, width, bottom=grain_t+grass_t+maize_t,color=colours[3])
+    ax4a[j].set_title(species_names[j])
+    
+    ax4a[0].set_ylabel('Number of geese')
+    ax4a[1].set_xlabel('Month')
+ax4a[j].legend(handles=(p1[0],p2[0],p3[0], p4[0]),labels=geese_foods_wcereal, fancybox=True, shadow=True, title='Grazing on\n(food of maximum \nintake value\n in the location)', loc='center right',bbox_to_anchor=(2, 0.60), ncol=1)
+fig4a, ax4a = plt.subplots(1,3,sharex='col', sharey='row', figsize=mpl.figure.figaspect(0.9)*2)
+for j in range(3):
+    
+    
+    months = mdates.MonthLocator()
+    myFmt = mdates.DateFormatter('%b')
+    # plt.sca()
+    fig4a.autofmt_xdate(rotation='vertical')
+    colours = ['blue', 'red', 'green', 'yellow']
+    width = 5
+    all_dates_str =  forage_summary_wcereal.index.get_level_values(0).unique()
+    #all_dates=[pendulum.parse(i) for i in all_dates_str]
+    all_dates=[dt.datetime.strptime(i+'-0', '%Y-W%U-%w') for i in all_dates_str]
+    ax4a[j].xaxis.set_major_formatter(myFmt)
+        
+    ax4a[j].grid()
+        
+        
+    ax4a[j].xaxis.set_minor_locator(months)
+    ax4a[j].xaxis_date()
+    grain_t=forage_summary_wcereal.xs('grain', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    grass_t=forage_summary_wcereal.xs('grass', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    maize_t=forage_summary_wcereal.xs('maize', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    cereal_t=forage_summary_wcereal.xs('cereal', level=1+j)[species_names[j]+'_sum'].reset_index(level=2, drop=True).reset_index(level=1, drop=True).groupby(level=0).agg(sum).reindex(all_dates_str).fillna(0)
+    sum_t=grain_t+cereal_t+grass_t+maize_t
+    grain_t /=0.01*sum_t
+    cereal_t/=0.01*sum_t
+    maize_t/=0.01*sum_t
+    grass_t/=0.01*sum_t
+    p1=ax4a[j].bar(all_dates, grain_t.fillna(0), width, color=colours[0])
+    p2=ax4a[j].bar(all_dates, grass_t.fillna(0), width, bottom=grain_t.fillna(0),color=colours[1])
+    p3=ax4a[j].bar(all_dates, maize_t.fillna(0), width, bottom=grain_t.fillna(0)+grass_t.fillna(0),color=colours[2])
+    p4=ax4a[j].bar(all_dates, cereal_t.fillna(0), width, bottom=grain_t.fillna(0)+grass_t.fillna(0)+maize_t.fillna(0),color=colours[3])
+    ax4a[j].set_title(species_names[j])
+    
+    ax4a[0].set_ylabel('percent %')
+    ax4a[2].set_xlabel('Month')   
+ax4a[j].legend(handles=(p1[0],p2[0],p3[0], p4[0]),labels=geese_foods_wcereal, fancybox=True, shadow=True, title='Grazing on\n(food of maximum \nintake value\n in the location)', loc='center right',bbox_to_anchor=(2, 0.60), ncol=1)
+#### field data
+field_forage_data=pd.read_csv(data_dir+"habitat-use-2014.tsv", sep='\t', header=0)
+field_forage_data.loc[field_forage_data['month']==1,'month']=13
+ff_summary=field_forage_data.groupby(['month','species', 'habitat']).agg(sum)
+xtick_locs = range(9, 14)
+xtick_labs=['Sep', 'Oct', 'Nov', 'Dec', 'Jan']
+fig4a, ax4a = plt.subplots(1,3,sharex='col', sharey='row', figsize=mpl.figure.figaspect(0.5)*2)
+for j in range(3):
+    
+    
+    months = mdates.MonthLocator()
+    myFmt = mdates.DateFormatter('%b')
+    # plt.sca()
+    fig4a.autofmt_xdate(rotation='vertical')
+    colours = ['blue', 'red', 'green', 'yellow', 'magenta']
+    width = 0.9
+    all_dates_str =  ff_summary.index.get_level_values(0).unique()
+
+    #ax4a.xaxis.set_major_formatter(myFmt)
+    #all_dates=[dt.datetime.strptime(i+, '%m') for i in all_dates_str]
+    ax4a[j].grid()
+    stubble_t=ff_summary.xs('Stubble', level=2).xs(species_names[j], level=1).reindex(all_dates_str).fillna(0)
+    grass_t=ff_summary.xs('Grass', level=2).xs(species_names[j], level=1).reindex(all_dates_str).fillna(0)
+    maize_t=ff_summary.xs('Maize', level=2).xs(species_names[j], level=1).reindex(all_dates_str).fillna(0)
+    cereal_t=ff_summary.xs('WinterCereal', level=2).xs(species_names[j], level=1).reindex(all_dates_str).fillna(0)
+    rape_t=ff_summary.xs('Rape', level=2).xs('pinkfoot', level=1).reindex(all_dates_str).fillna(0)
+    p1=ax4a[j].bar(all_dates_str, stubble_t.N, width, color=colours[0], label='Stubble')
+    p2=ax4a[j].bar(all_dates_str, grass_t.N, width, bottom=stubble_t.N,color=colours[1], label='Grass')
+    p3=ax4a[j].bar(all_dates_str, maize_t.N, width, bottom=stubble_t.N+grass_t.N,color=colours[2], label='Maize')
+    p4=ax4a[j].bar(all_dates_str, cereal_t.N, width, bottom=stubble_t.N+grass_t.N+maize_t.N,color=colours[3], label='Cereal')
+    p5=ax4a[j].bar(all_dates_str, rape_t.N, width, bottom=stubble_t.N+grass_t.N+maize_t.N+cereal_t.N,color=colours[4], label='Rape')
+    ax4a[j].set_xticks(xtick_locs)
+    ax4a[j].set_xticklabels(xtick_labs)
+    #ax4a[j].set_rotation(90)
+    ax4a[j].set_title(species_names[j])
+    
+    ax4a[0].set_ylabel('Number of geese')
+    ax4a[1].set_xlabel('Month')
+ax4a[j].legend(fancybox=True, shadow=True, title='Habitat', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)
+
+
+fig4a, ax4a = plt.subplots(1,3,sharex='col', sharey='row', figsize=mpl.figure.figaspect(0.5)*2)
+for j in range(3):
+    
+    
+    months = mdates.MonthLocator()
+    myFmt = mdates.DateFormatter('%b')
+    # plt.sca()
+    fig4a.autofmt_xdate(rotation='vertical')
+    colours = ['blue', 'red', 'green', 'yellow', 'magenta']
+    width = 0.9
+    all_dates_str =  ff_summary.index.get_level_values(0).unique()
+
+    #ax4a.xaxis.set_major_formatter(myFmt)
+    #all_dates=[dt.datetime.strptime(i+, '%m') for i in all_dates_str]
+    ax4a[j].grid()
+    stubble_t=ff_summary.xs('Stubble', level=2).xs(species_names[j], level=1).reindex(all_dates_str).fillna(0)
+    grass_t=ff_summary.xs('Grass', level=2).xs(species_names[j], level=1).reindex(all_dates_str).fillna(0)
+    maize_t=ff_summary.xs('Maize', level=2).xs(species_names[j], level=1).reindex(all_dates_str).fillna(0)
+    cereal_t=ff_summary.xs('WinterCereal', level=2).xs(species_names[j], level=1).reindex(all_dates_str).fillna(0)
+    rape_t=ff_summary.xs('Rape', level=2).xs('pinkfoot', level=1).reindex(all_dates_str).fillna(0)
+    sum_t = stubble_t+grass_t+maize_t+cereal_t+rape_t
+    stubble_t/=0.01*sum_t
+    grass_t/=0.01*sum_t
+    maize_t/=0.01*sum_t
+    cereal_t/=0.01*sum_t
+    rape_t/=0.01*sum_t
+    p1=ax4a[j].bar(all_dates_str, stubble_t.N, width, color=colours[0], label='Stubble')
+    p2=ax4a[j].bar(all_dates_str, grass_t.N, width, bottom=stubble_t.N,color=colours[1], label='Grass')
+    p3=ax4a[j].bar(all_dates_str, maize_t.N, width, bottom=stubble_t.N+grass_t.N,color=colours[2], label='Maize')
+    p4=ax4a[j].bar(all_dates_str, cereal_t.N, width, bottom=stubble_t.N+grass_t.N+maize_t.N,color=colours[3], label='Cereal')
+    p5=ax4a[j].bar(all_dates_str, rape_t.N, width, bottom=stubble_t.N+grass_t.N+maize_t.N+cereal_t.N,color=colours[4], label='Rape')
+    ax4a[j].set_xticks(xtick_locs)
+    ax4a[j].set_xticklabels(xtick_labs)
+    ax4a[j].set_title(species_names[j])
+    
+    ax4a[0].set_ylabel('percent %')
+    ax4a[1].set_xlabel('Month')
+ax4a[j].legend(fancybox=True, shadow=True, title='Habitat', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)  
+#### Other sim data
+
+sim_habdata=pd.read_csv(data_dir+"GooseHabitatUseStats.txt", sep='\t', header=0)
+sim_habdata['daydate']=my_dateparser(sim_habdata['day'])
+sim_habdata=sim_habdata[(sim_habdata['daydate'].dt.month>7) | (sim_habdata['daydate'].dt.month<5)]
+sim_habdata_fieldsim=pd.read_csv(data_dir+"GooseHabitatUseFieldObsStats.txt", sep='\t', header=0)
+
+sim_habdata_fieldsim['daydate']=my_dateparser(sim_habdata_fieldsim['day'])
+sim_habdata_fieldsim=sim_habdata_fieldsim[((sim_habdata_fieldsim['daydate'].dt.month>7) | (sim_habdata_fieldsim['daydate'].dt.month<=5))&(sim_habdata_fieldsim['count']>0)]
+sim_habdata_gr=sim_habdata.groupby(['daydate','species']).agg(sum)
+sim_habdata_fieldsim_gr=sim_habdata_fieldsim.groupby(['daydate','species']).agg(sum)
+fig4a, ax4a = plt.subplots(1,3,sharex='col', sharey='row', figsize=mpl.figure.figaspect(0.5)*2)
+for j in range(3):
+    
+    
+    months = mdates.MonthLocator()
+    myFmt = mdates.DateFormatter('%b')
+    # plt.sca()
+    fig4a.autofmt_xdate(rotation='vertical')
+    colours = ['blue', 'red', 'green', 'yellow', 'magenta']
+    width = 15
+    all_dates =  sim_habdata_fieldsim_gr.index.get_level_values(0).unique()
+
+    ax4a[j].xaxis.set_major_formatter(myFmt)
+    #all_dates=[dt.datetime.strptime(i+, '%m') for i in all_dates_str]
+    ax4a[j].grid()
+    grain_t=sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['grain']*100
+    grass_t=sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['grass']*100
+    maize_t=sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['maize']*100
+    cereal_t=sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['winter_cereal']*100
+    p1=ax4a[j].bar(all_dates, grain_t.fillna(0), width, color=colours[0], label='grain')
+    p2=ax4a[j].bar(all_dates, grass_t.fillna(0), width, bottom=grain_t.fillna(0),color=colours[1], label='grass')
+    p3=ax4a[j].bar(all_dates, maize_t.fillna(0), width, bottom=grain_t.fillna(0)+grass_t.fillna(0),color=colours[2], label='maize')
+    p4=ax4a[j].bar(all_dates, cereal_t.fillna(0), width, bottom=grain_t.fillna(0)+grass_t.fillna(0)+maize_t.fillna(0),color=colours[3], label='cereal')
+    ax4a[j].set_title(species_names[j])
+    ax4a[0].set_ylabel('percent %')
+    ax4a[1].set_xlabel('Month')
+ax4a[j].legend(fancybox=True, shadow=True, title='Habitat', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)  
+fig4a.suptitle('Habitats observations simulaton file (percentage)')
+fig4a, ax4a = plt.subplots(1,3,sharex='col', sharey='row', figsize=mpl.figure.figaspect(0.5)*2)
+for j in range(3):
+    
+    
+    months = mdates.MonthLocator()
+    myFmt = mdates.DateFormatter('%b')
+    # plt.sca()
+    fig4a.autofmt_xdate(rotation='vertical')
+    colours = ['blue', 'red', 'green', 'yellow', 'magenta']
+    width = 15
+    all_dates =  sim_habdata_fieldsim_gr.index.get_level_values(0).unique()
+
+    ax4a[j].xaxis.set_major_formatter(myFmt)
+    #all_dates=[dt.datetime.strptime(i+, '%m') for i in all_dates_str]
+    ax4a[j].grid()
+    grain_t=sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['grain']*sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['count']
+    grass_t=sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['grass']*sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['count']
+    maize_t=sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['maize']*sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['count']
+    cereal_t=sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['winter_cereal']*sim_habdata_fieldsim_gr.xs(species_names[j], level=1).reindex(all_dates).fillna(0)['count']
+    p1=ax4a[j].bar(all_dates, grain_t.fillna(0), width, color=colours[0], label='grain')
+    p2=ax4a[j].bar(all_dates, grass_t.fillna(0), width, bottom=grain_t.fillna(0),color=colours[1], label='grass')
+    p3=ax4a[j].bar(all_dates, maize_t.fillna(0), width, bottom=grain_t.fillna(0)+grass_t.fillna(0),color=colours[2], label='maize')
+    p4=ax4a[j].bar(all_dates, cereal_t.fillna(0), width, bottom=grain_t.fillna(0)+grass_t.fillna(0)+maize_t.fillna(0),color=colours[3], label='cereal')
+    ax4a[j].set_title(species_names[j])
+    ax4a[0].set_ylabel('number of individuals')
+    ax4a[1].set_xlabel('Month')
+ax4a[j].legend(fancybox=True, shadow=True, title='Habitat', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)  
+fig4a.suptitle('Habitats observations simulaton file (total numbers)')
 #### vegetation heights graphs
 barnacle_max = 13.4626
 pinkfoot_max = 16.6134
