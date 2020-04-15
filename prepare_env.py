@@ -43,7 +43,7 @@ for i in datafileslist:
     if i == "GooseFieldForageData.txt":
         cwd_s = os.getcwd()
         os.chdir(os.path.expanduser(data_dir+"/"))
-        zipObj = zipfile.ZipFile(os.path.expanduser(data_dir_new+"/"+i+".gz"), 'w', compression=zipfile.ZIP_LZMA) #ZIP_BZIP2 ZIP_DEFLATED
+        zipObj = zipfile.ZipFile(os.path.expanduser(data_dir_new+"/"+i+".gz"), 'w', compression=zipfile.ZIP_BZIP2) #ZIP_LZMA ZIP_BZIP2 ZIP_DEFLATED
         zipObj.write(os.path.expanduser(i))
         zipObj.close()
         os.chdir(cwd_s)
