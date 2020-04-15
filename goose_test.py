@@ -735,6 +735,46 @@ for j in range(3):
     ax4a[1].set_xlabel('Month')
 ax4a[j].legend(fancybox=True, shadow=True, title='Habitat', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)  
 fig4a.suptitle('Habitats observations simulaton file (total numbers)')
+### Now the last thing is the elaborate estimation of habitat made by Lars:
+forage_summary_Lars_hab=forage_data_months_filtered.groupby(['weekdate', 'habitat']).agg(
+                                                        barnacle_sum=('barnacle'+is_timed_str, sum),greylag_sum=(
+                                                            'greylag'+is_timed_str, sum),pinkfoot_sum=(
+                                                                'pinkfoot'+is_timed_str, sum))
+                                                                
+                                                                
+fig4a, ax4a = plt.subplots(1,3,sharex='col', sharey='row', figsize=mpl.figure.figaspect(0.5)*2)
+for j in range(3):
+    
+    
+    months = mdates.MonthLocator()
+    myFmt = mdates.DateFormatter('%b')
+    # plt.sca()
+    fig4a.autofmt_xdate(rotation='vertical')
+    colours = ['blue', 'red', 'green', 'yellow', 'magenta', 'violet', 'black']
+    width = 15
+    all_dates_str =  forage_summary_Lars_hab.index.get_level_values(0).unique()
+    all_habitats = forage_summary_Lars_hab.index.get_level_values(1).unique()
+    all_dates=[dt.datetime.strptime(i+'-0', '%Y-W%U-%w') for i in all_dates_str]
+    ax4a[j].xaxis.set_major_formatter(myFmt)
+    #all_dates=[dt.datetime.strptime(i+, '%m') for i in all_dates_str]
+    ax4a[j].grid()
+    habitat_t = np.zeros([len(all_dates), len(all_habitats)])
+    #bottoms = np.zeros([len(all_dates),1])
+    for k in range(len(all_habitats)):
+        habitat_t[:,k]=forage_summary_Lars_hab.xs(all_habitats[k], level=1).reindex(all_dates_str).fillna(0)[species_names[j]+'_sum']
+        if k==0:
+            ax4a[j].bar(np.array(all_dates).reshape([len(all_dates),1]), habitat_t[:,k].reshape([len(all_dates),1]), width, color=colours[k], label=all_habitats[k])
+            bottoms = habitat_t[:,k].reshape([len(all_dates),1])
+        else:
+            ax4a[j].bar(all_dates, habitat_t[:,k].reshape([len(all_dates),1]), width,bottom=bottoms, color=colours[k], label=all_habitats[k])
+            bottoms+=habitat_t[:,k].reshape([len(all_dates),1])
+    
+    ax4a[j].set_title(species_names[j])
+    ax4a[0].set_ylabel('number of individuals')
+    ax4a[1].set_xlabel('Month')
+ax4a[j].legend(fancybox=True, shadow=True, title='Habitat', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)  
+fig4a.suptitle('Larse\'s habitats (total numbers)')
+                                        
 #### vegetation heights graphs
 barnacle_max = 13.4626
 pinkfoot_max = 16.6134
