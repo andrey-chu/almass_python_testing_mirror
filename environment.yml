@@ -1,0 +1,6 @@
+name: stats
+dependencies:
+  - git-lfs
+  - pandas
+  - numpy
+
