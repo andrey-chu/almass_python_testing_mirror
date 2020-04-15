@@ -32,7 +32,7 @@ else:
 
 
 data_dir = "rundir/"#"~/CLionProjects/GooseTests/run-directory1/"
-source_dir = "source"#"~/CLionProjects/ALMaSS_all"
+#source_dir = "source"#"~/CLionProjects/ALMaSS_all"
 field_dir ="fielddir"#"~/CLionProjects/GooseTests/ALMaSS_inputs"
 # let us read the config data, it will be useful afterwards
 CONFIG_PATH=data_dir+'TIALMaSSConfig.cfg'
