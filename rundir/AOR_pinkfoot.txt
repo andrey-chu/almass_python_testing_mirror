@@ -1,2 +1,2 @@
 Year	Day	Total_no	Cells50	Occupied50	Cells100	Occupied100	Cells200	Occupied200	Cells400	Occupied400
-1	300	5596	345600	4	86400	4	21600	4	5400	4
+1	300	5355	345600	4	86400	4	21600	4	5400	4
