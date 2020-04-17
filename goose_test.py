@@ -750,8 +750,8 @@ for j in range(3):
     myFmt = mdates.DateFormatter('%b')
     # plt.sca()
     fig4a.autofmt_xdate(rotation='vertical')
-    colours = ['blue', 'red', 'green', 'yellow', 'magenta', 'violet', 'black']
-    width = 15
+   
+    width = 5
     all_dates_str =  forage_summary_Lars_hab.index.get_level_values(0).unique()
     all_habitats = forage_summary_Lars_hab.index.get_level_values(1).unique()
     all_dates=[dt.datetime.strptime(i+'-0', '%Y-W%U-%w') for i in all_dates_str]
@@ -763,18 +763,94 @@ for j in range(3):
     for k in range(len(all_habitats)):
         habitat_t[:,k]=forage_summary_Lars_hab.xs(all_habitats[k], level=1).reindex(all_dates_str).fillna(0)[species_names[j]+'_sum']
         if k==0:
-            ax4a[j].bar(np.array(all_dates).reshape([len(all_dates),1]), habitat_t[:,k].reshape([len(all_dates),1]), width, color=colours[k], label=all_habitats[k])
-            bottoms = habitat_t[:,k].reshape([len(all_dates),1])
+            ax4a[j].bar(list(all_dates), list(habitat_t[:,k]), width, label=all_habitats[k])
+            bottoms = list(habitat_t[:,k])
         else:
-            ax4a[j].bar(all_dates, habitat_t[:,k].reshape([len(all_dates),1]), width,bottom=bottoms, color=colours[k], label=all_habitats[k])
-            bottoms+=habitat_t[:,k].reshape([len(all_dates),1])
+            ax4a[j].bar(list(all_dates), list(habitat_t[:,k]), width,bottom=bottoms, label=all_habitats[k])
+            bottoms=list(habitat_t[:,k]+np.array(bottoms))
     
     ax4a[j].set_title(species_names[j])
     ax4a[0].set_ylabel('number of individuals')
     ax4a[1].set_xlabel('Month')
 ax4a[j].legend(fancybox=True, shadow=True, title='Habitat', loc='center right',bbox_to_anchor=(1.5, 0.60), ncol=1)  
 fig4a.suptitle('Larse\'s habitats (total numbers)')
-                                        
+                          
+#### Distance to the roost
+for i in species_names:
+    forage_data[i+'_wtd_roost_dist']=forage_data['roost_dist_'+i]*forage_data[i+is_timed_str]
+#def wtavg_barnacle(x, sp_name):
+def wtavg_roost(x, sp_name):
+    try:
+        #return np.sum(x['wtd_roost_dist_'])/ np.sum( x[sp_name+is_timed_str])
+        return pd.Series([np.average(x['roost_dist_'+sp_name], weights = x[sp_name+is_timed_str])], index=['roost_'+sp_name])
+    except ZeroDivisionError:
+        return pd.Series([0], index=['roost_'+sp_name])
+def wtavg_roost_field(x, sp_name):
+    try:
+        #return np.sum(x['wtd_roost_dist_'])/ np.sum( x[sp_name+is_timed_str])
+        return pd.Series([np.average(x['dist'], weights = x['numbers'])], index=['roost_'+sp_name])
+    except ZeroDivisionError:
+        return pd.Series([0], index=['roost_'+sp_name])
+def min_week(series):
+    temp= np.min(series).week+1
+    if temp == 53:
+        return 0
+    else:
+        return temp
+forage_summary_roost=pd.concat([forage_data_months_filtered.groupby(['weekdate']).apply(wtavg_roost,sp_name='barnacle'),
+                               forage_data_months_filtered.groupby(['weekdate']).apply(wtavg_roost,sp_name='pinkfoot'),
+                               forage_data_months_filtered.groupby(['weekdate']).apply(wtavg_roost,sp_name='greylag'), 
+                               forage_data_months_filtered.groupby(['weekdate']).agg(week=('daydate', min_week))],
+                               axis=1, join='outer')
+roost_field_observ_data=pd.read_csv(data_dir+"fieldobs_01112017.tsv", sep='\t', header=0)
+roost_field_observ_data['daydate']=[dt.datetime.strptime(i, '%Y-%m-%dT%H:%M:%SZ') for i in roost_field_observ_data.ObsDato]
+barnacle_obs_roost=roost_field_observ_data[roost_field_observ_data.species=='Barnacle'].groupby(['species','week']).apply(wtavg_roost_field, sp_name='barnacle_obs').droplevel(0)
+pinkfoot_obs_roost=roost_field_observ_data[roost_field_observ_data.species=='Pinkfoot'].groupby(['species','week']).apply(wtavg_roost_field, sp_name='pinkfoot_obs').droplevel(0)
+#greylag_obs_roost=roost_field_observ_data[roost_field_observ_data.species=='Greylag'].groupby(['species','week']).apply(wtavg_roost_field, sp_name='greylag_obs').droplevel(0)
+roost_data_comparable=pd.concat([forage_summary_roost.set_index('week'), pinkfoot_obs_roost, barnacle_obs_roost],axis=1, join='inner')
+fig4a, ax4a = plt.subplots(1,2,sharex='col', sharey='row', figsize=mpl.figure.figaspect(0.5)*2)
+
+months = mdates.MonthLocator()
+myFmt = mdates.DateFormatter('%b')
+# plt.sca()
+fig4a.autofmt_xdate(rotation='vertical')
+   
+
+all_dates_str =  forage_summary_roost.index.get_level_values(0).unique()
+
+all_dates=[dt.datetime.strptime(i+'-0', '%Y-W%U-%w') for i in all_dates_str]
+ax4a[0].xaxis.set_major_formatter(myFmt)
+#all_dates=[dt.datetime.strptime(i+, '%m') for i in all_dates_str]
+ax4a[0].grid()
+
+ax4a[0].plot(all_dates,forage_summary_roost.roost_barnacle, label='barnacle')
+ax4a[0].plot(all_dates,forage_summary_roost.roost_pinkfoot, label='pinkfoot')
+ax4a[0].plot(all_dates,forage_summary_roost.roost_greylag, label='greylag')
+ax4a[0].legend(fancybox=True, shadow=True, title='Species',  ncol=1)
+ax4a[0].set_title('Distance from the roost')
+ax4a[0].set_xlabel('Month')
+ax4a[0].set_ylabel('metres')
+ax4a[1].grid()
+
+p1,=ax4a[1].plot(roost_data_comparable.index,roost_data_comparable.roost_barnacle, label='barnacle sim', linestyle='-')
+ax4a[1].plot(roost_data_comparable.index,roost_data_comparable.roost_barnacle_obs, label='barnacle field',linestyle='--', color=p1.get_color())
+p1,=ax4a[1].plot(roost_data_comparable.index,roost_data_comparable.roost_pinkfoot, label='pinkfoot sim', linestyle='-')
+ax4a[1].plot(roost_data_comparable.index,roost_data_comparable.roost_pinkfoot_obs, label='barnacle field',linestyle='--', color=p1.get_color())
+#ax4a[1].plot(all_dates,forage_summary_roost.roost_pinkfoot, label='pinkfoot')
+#ax4a[1].plot(all_dates,forage_summary_roost.roost_greylag, label='greylag')
+ax4a[1].legend(fancybox=True, shadow=True, title='Species',  ncol=1)
+ax4a[1].set_title('Distance from the roost vs field data')
+ax4a[1].set_xlabel('Week')
+
+
+
+
+
+
+
+
+
+
 #### vegetation heights graphs
 barnacle_max = 13.4626
 pinkfoot_max = 16.6134
