@@ -111,6 +111,7 @@ AOR_dataframe2["Cell_size"]=[regex1.search(s).group(0) for s in AOR_dataframe2["
 AOR_dataframe_merged= pd.merge(AOR_dataframe1, AOR_dataframe2)
 AOR_dataframe_merged['Date']=my_dateparser(np.uint(AOR_dataframe_merged['Day']))
 AOR_dataframe_merged['Proportion_occupied'] = AOR_dataframe_merged['Occupied']/AOR_dataframe_merged['Cells']
+AOR_dataframe_merged['Mean_Occupied_density'] = AOR_dataframe_merged['Total_no']/AOR_dataframe_merged['Occupied']
 
 print ("Geese AOR table:")
 display(AOR_dataframe_merged)
