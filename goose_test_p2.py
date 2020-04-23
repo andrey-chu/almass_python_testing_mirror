@@ -52,9 +52,9 @@ def ac_mask_mult(df, key, value):
 # We will use this mask instead of a standard one
 pd.DataFrame.mask = ac_mask_mult
 
-data_dir = "~/CLionProjects/GooseTests/run-directory1/"
-source_dir = "~/CLionProjects/ALMaSS_all"
-field_dir ="~/CLionProjects/GooseTests/ALMaSS_inputs"
+data_dir = "rundir/"#"~/CLionProjects/GooseTests/run-directory1/"
+#source_dir = #"~/CLionProjects/ALMaSS_all"
+field_dir ="fielddir"#"~/CLionProjects/GooseTests/ALMaSS_inputs"
 # let us read the config data, it will be useful afterwards
 CONFIG_PATH=data_dir+'TIALMaSSConfig.cfg'
 with open(os.path.expanduser(CONFIG_PATH), 'r') as f:
@@ -92,7 +92,7 @@ for i in range(3):
     ax9[i].xaxis.set_minor_locator(months)
     ax9[i].xaxis_date()
     temp_data = weight_data[weight_data['species']==species_names[i]]
-    line9=ax9[i].errorbar(temp_data['daydate'],temp_data['mean_weight'],temp_data['mean_weight_se'], capsize=3, ms=5, marker=".")
+    line9=ax9[i].errorbar(temp_data['daydate'],temp_data['mean_weight'],temp_data['mean_weight_sd'], capsize=3, ms=5, marker=".")
     ax9[i].set_title(species_names[i])
 
 
@@ -113,7 +113,7 @@ field_agg=field_data.groupby('weekdate2').agg(weight_mean=('Weight', np.mean), w
 
 
 
-line10=ax10.errorbar(pinkfoot_simdata['daydate'],pinkfoot_simdata['mean_weight'],temp_data['mean_weight_se'], capsize=3, ms=5, marker=".")
+line10=ax10.errorbar(pinkfoot_simdata['daydate'],pinkfoot_simdata['mean_weight'],temp_data['mean_weight_sd'], capsize=3, ms=5, marker=".")
 line11=ax10.errorbar(field_agg.index,field_agg['weight_mean'],field_agg['weight_std'], capsize=3, ms=5, marker=".")
 ax10.legend(handles=[line10,line11], labels=['simulation', 'field data'], fancybox=True, shadow=True, title='Pinkfoot weights', loc='center right',bbox_to_anchor=(1.5, 0.60))
 
@@ -133,10 +133,10 @@ line12=[None]*3
 line12_sh=[None]*3
 for i in range(3):
     temp = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['flight_distance']/1000
-    temp_se = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['flight_distance_se']/1000
+    temp_sd = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['flight_distance_sd']/1000
     times = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['daydate']
     line12[i],=ax11.plot(times,temp, ms=5, marker=".")
-    line12_sh[i]=ax11.fill_between(times, temp-temp_se, temp+ temp_se ,alpha=0.2,color=line12[i]._color)
+    line12_sh[i]=ax11.fill_between(times, temp-temp_sd, temp+ temp_sd ,alpha=0.2,color=line12[i]._color)
 ax11.legend(handles=line12, labels=species_names, fancybox=True, shadow=True, title='species', loc='center right',bbox_to_anchor=(1.5, 0.60))
 fig11.suptitle('Daily flight distance')
 
@@ -151,10 +151,10 @@ line13_sh=[None]*3
 
 for i in range(3):
     temp = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['foraging_time']
-    temp_se = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['foraging_time_se']
+    temp_sd = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['foraging_time_sd']
     times = energetics_data[energetics_data.species.eq(species_names[i]) & (energetics_data.flight_distance>0)]['daydate']
     line13[i],=ax12.plot(times,temp, ms=5, marker=".")
-    line13_sh[i]=ax12.fill_between(times, temp-temp_se, temp+ temp_se ,alpha=0.2,color=line12[i]._color)
+    line13_sh[i]=ax12.fill_between(times, temp-temp_sd, temp+ temp_sd ,alpha=0.2,color=line12[i]._color)
 
 ax12.plot(energetics_data.daydate,energetics_data.day_length, color='black')
 ax12.annotate('day length', (mdates.date2num(dt.datetime(2010, 9, 1)), 700), xytext=(15, 15), textcoords='offset points')
@@ -174,10 +174,10 @@ line14_sh=[None]*3
 
 for i in range(3):
     temp = energetics_data[(energetics_data.species.eq(species_names[i])) & (energetics_data.flight_distance>0)]['daily_energy_balance']
-    temp_se = energetics_data[(energetics_data.species.eq(species_names[i])) & (energetics_data.flight_distance>0)]['daily_energy_balance_se']
+    temp_sd = energetics_data[(energetics_data.species.eq(species_names[i])) & (energetics_data.flight_distance>0)]['daily_energy_balance_sd']
     times = energetics_data[(energetics_data.species.eq(species_names[i])) & (energetics_data.flight_distance>0)]['daydate']
     line14[i],=ax13.plot(times,temp, ms=5, marker=".")
-    line14_sh[i]=ax13.fill_between(times, temp-temp_se, temp+ temp_se ,alpha=0.2,color=line12[i]._color)
+    line14_sh[i]=ax13.fill_between(times, temp-temp_sd, temp+ temp_sd ,alpha=0.2,color=line12[i]._color)
 
 start = energetics_data.daydate.min()
 end = energetics_data.daydate.max()
@@ -202,10 +202,10 @@ line15_sh=[None]*3
 
 for i in range(3):
     temp = locations_stats_data[(locations_stats_data.species.eq(species_names[i])) & (locations_stats_data.n_forage_locs>0)]['n_forage_locs']
-    temp_se = locations_stats_data[(locations_stats_data.species.eq(species_names[i])) & (locations_stats_data.n_forage_locs>0)]['n_forage_locs_se']
+    temp_sd = locations_stats_data[(locations_stats_data.species.eq(species_names[i])) & (locations_stats_data.n_forage_locs>0)]['n_forage_locs_sd']
     times = locations_stats_data[(locations_stats_data.species.eq(species_names[i])) & (locations_stats_data.n_forage_locs>0)]['daydate']
     line15[i],=ax14.plot(times,temp, ms=5, marker=".")
-    line15_sh[i]=ax14.fill_between(times, temp-temp_se, temp+ temp_se ,alpha=0.2,color=line12[i]._color)
+    line15_sh[i]=ax14.fill_between(times, temp-temp_sd, temp+ temp_sd ,alpha=0.2,color=line12[i]._color)
 
 
 
