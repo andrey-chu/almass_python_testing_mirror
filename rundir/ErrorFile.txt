@@ -34,3 +34,75 @@ Configurator::ParseCfgLine() Syntax error at config line  137
 Wed Apr  8 14:52:32 2020
  Level 3 *****
 Configurator::SetCfgBool() Not a boolean data value at config line 137
+Thu Apr 23 18:03:14 2020
+ *****
+CfgFloat::set Value out of range:  0
+Thu Apr 23 18:03:14 2020
+ *****
+Name:  GOOSE_METABOLICCONVCOSTS
+Thu Apr 23 18:03:14 2020
+ *****
+CfgFloat::set Max allowed:  100
+Thu Apr 23 18:03:14 2020
+ *****
+CfgFloat::set Min allowed:  1
+Thu Apr 23 18:14:11 2020
+ *****
+CfgFloat::set Value out of range:  0
+Thu Apr 23 18:14:11 2020
+ *****
+Name:  GOOSE_METABOLICCONVCOSTS
+Thu Apr 23 18:14:11 2020
+ *****
+CfgFloat::set Max allowed:  100
+Thu Apr 23 18:14:11 2020
+ *****
+CfgFloat::set Min allowed:  1
+Thu Apr 23 18:30:08 2020
+ *****
+CfgFloat::set Value out of range:  0
+Thu Apr 23 18:30:08 2020
+ *****
+Name:  GOOSE_METABOLICCONVCOSTS
+Thu Apr 23 18:30:08 2020
+ *****
+CfgFloat::set Max allowed:  100
+Thu Apr 23 18:30:08 2020
+ *****
+CfgFloat::set Min allowed:  1
+Fri Apr 24 09:32:02 2020
+ *****
+CfgFloat::set Value out of range:  0
+Fri Apr 24 09:32:02 2020
+ *****
+Name:  GOOSE_METABOLICCONVCOSTS
+Fri Apr 24 09:32:02 2020
+ *****
+CfgFloat::set Max allowed:  100
+Fri Apr 24 09:32:02 2020
+ *****
+CfgFloat::set Min allowed:  1
+Fri Apr 24 10:52:31 2020
+ *****
+CfgFloat::set Value out of range:  0
+Fri Apr 24 10:52:31 2020
+ *****
+Name:  GOOSE_METABOLICCONVCOSTS
+Fri Apr 24 10:52:31 2020
+ *****
+CfgFloat::set Max allowed:  100
+Fri Apr 24 10:52:31 2020
+ *****
+CfgFloat::set Min allowed:  1
+Mon Apr 27 12:36:36 2020
+ *****
+Normal exit after hunter distribution. No of records written to Hunter_Hunting_Locations.txt was:  343
+Mon Apr 27 12:50:11 2020
+ Level 3 *****
+Configurator::ParseCfgLine() Missing '=' assignment operator at config line  245
+Mon Apr 27 12:50:59 2020
+ Level 3 *****
+Configurator::ParseCfgLine() Missing '=' assignment operator at config line  245
+Mon Apr 27 12:51:38 2020
+ Level 3 *****
+Configurator::ParseCfgLine() Missing '=' assignment operator at config line  245

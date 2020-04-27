@@ -1,0 +1,1 @@
+Year	Day	Hour	Minute	Season	HunterRef	PolygonRef	x-coord	y-coord	GameType
