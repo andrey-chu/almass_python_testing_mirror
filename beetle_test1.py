@@ -50,6 +50,7 @@ ax1.set_title('Daily population size')
 ############################# Stages graph #######################################
 
 
-stages_columnnames = 
-stages_data1=pd.read_csv(results_dir1+"Probe.res", sep='\t', header=None, names=column_names)
-stages_data2=pd.read_csv(results_dir2+"Probe.res", sep='\t', header=None, names=column_names)
+stages_columnnames = ['Ignore', 'Year', 'TotalDay', 'DayInYear', 'YearNo', 'State', 'CanReproduce']
+stages_data1=pd.read_csv(results_dir1+"debug.tsv", sep='\t', header=None, names=stages_columnnames, usecols=[2, 4, 5, 6], dtype={'TotalDay':'Int64', 'YearNo':'Int64', 'State':'Int64','CanReproduce':'Int64'}, skiprows=[0])
+stages_data2=pd.read_csv(results_dir2+"debug.tsv", sep='\t', header=None, names=stages_columnnames, usecols=[2, 4, 5, 6], dtype={'TotalDay':'Int64', 'YearNo':'Int64', 'State':'Int64','CanReproduce':'Int64'}, skiprows=[0])
+stages_data1_grouped=stages_data1.groupby(['TotalDay', 'State'])['CanReproduce'].count()
